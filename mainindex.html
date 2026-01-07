@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Tổng hợp các bài tập CSS</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Bổ sung style cho trang chủ tổng hợp */
+        .dashboard {
+            padding: 40px 0;
+        }
+        
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .dashboard-title {
+            font-size: 2.8rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            margin-bottom: 15px;
+        }
+        
+        .dashboard-subtitle {
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-shadow-hover);
+        }
+        
+        .project-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            margin-bottom: 25px;
+            font-size: 32px;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .project-card:hover .project-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .project-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .project-description {
+            color: var(--gray);
+            margin-bottom: 25px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .project-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: var(--accent-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .project-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(54, 209, 220, 0.3);
+        }
+        
+        .coming-soon {
+            opacity: 0.7;
+            filter: grayscale(0.2);
+        }
+        
+        .coming-soon .project-link {
+            background: var(--light-gray);
+            color: var(--gray);
+            cursor: not-allowed;
+        }
+        
+        .status-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .status-active {
+            background: var(--success);
+            color: white;
+        }
+        
+        .status-coming {
+            background: var(--warning);
+            color: var(--dark);
+        }
+        
+        /* ===== QUICK STATS ===== */
+        .quick-stats {
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+        
+        /* ===== INSTRUCTIONS ===== */
+        .instructions {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 60px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .instructions h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .dashboard-title {
+                font-size: 2.2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-stats {
+                flex-direction: column;
+                gap: 25px;
+            }
+            
+            .stat-item {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-home"></i>
+                <h1>Dashboard - CSS Projects</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#projects"><i class="fas fa-th-large"></i> Dự án</a></li>
+                    <li><a href="#instructions"><i class="fas fa-info-circle"></i> Hướng dẫn</a></li>
+                    <li><a href="#stats"><i class="fas fa-chart-bar"></i> Thống kê</a></li>
+                    <li><a href="index.html"><i class="fas fa-external-link-alt"></i> Lab 1</a></li>
+                    <li><a href="lab2.html">Lab 2 - Keyframes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="dashboard">
+            <div class="dashboard-header">
+                <h1 class="dashboard-title">Tổng hợp các bài tập CSS</h1>
+                <p class="dashboard-subtitle">Trang chủ quản lý và truy cập nhanh đến tất cả các bài tập, lab và dự án CSS Animation</p>
+                
+                <div class="quick-stats" id="stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="project-count">3</div>
+                        <div class="stat-label">Dự án</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Hiệu ứng</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Responsive</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="coming-soon-count">2</div>
+                        <div class="stat-label">Sắp ra mắt</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="projects-grid" id="projects">
+                <!-- Lab 1 - Đã có -->
+                <div class="project-card">
+                    <div class="status-badge status-active">ĐÃ HOÀN THÀNH</div>
+                    <div class="project-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="project-name">Lab 1 - CSS Hover & Transition</h3>
+                    <p class="project-description">Thực hành 5 bài tập về hiệu ứng hover và transition với thiết kế chuyên nghiệp: nút bấm, gallery, menu, card sản phẩm và banner.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-file-code"></i> 2 files</span>
+                        <span><i class="fas fa-clock"></i> 2 giờ</span>
+                        <span><i class="fas fa-signal"></i> Cơ bản</span>
+                    </div>
+                    <a href="index.html" class="project-link">
+                        <i class="fas fa-external-link-alt"></i> Truy cập Lab 1
+                    </a>
+                </div>
+                
+                <!-- Lab 2 - Đã hoàn thành -->
+<div class="project-card">
+    <div class="status-badge status-active">ĐÃ HOÀN THÀNH</div>
+    <div class="project-icon">
+        <i class="fas fa-play-circle"></i>
+    </div>
+    <h3 class="project-name">Lab 2 - CSS Keyframes & Animation</h3>
+    <p class="project-description">5 bài tập animation nâng cao với @keyframes: marquee, rotate, fade-in, blinking button, và CSS slider.</p>
+    <div class="project-meta">
+        <span><i class="fas fa-file-code"></i> 2 files</span>
+        <span><i class="fas fa-clock"></i> 3 giờ</span>
+        <span><i class="fas fa-signal"></i> Trung cấp</span>
+    </div>
+    <a href="lab2.html" class="project-link">
+        <i class="fas fa-external-link-alt"></i> Truy cập Lab 2
+    </a>
+</div>
+                
+                <!-- Project 1 - Đã có -->
+                <div class="project-card">
+                    <div class="status-badge status-active">ĐÃ HOÀN THÀNH</div>
+                    <div class="project-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="project-name">E-commerce UI Kit</h3>
+                    <p class="project-description">Bộ giao diện người dùng cho website thương mại điện tử với đầy đủ component: giỏ hàng, thanh toán, sản phẩm, v.v.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-file-code"></i> 5 files</span>
+                        <span><i class="fas fa-clock"></i> 8 giờ</span>
+                        <span><i class="fas fa-signal"></i> Nâng cao</span>
+                    </div>
+                    <a href="ecommerce.html" class="project-link">
+                        <i class="fas fa-external-link-alt"></i> Truy cập E-commerce
+                    </a>
+                </div>
+                
+                <!-- Project 2 - Đã có -->
+                <div class="project-card">
+                    <div class="status-badge status-active">ĐÃ HOÀN THÀNH</div>
+                    <div class="project-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="project-name">Dashboard Analytics</h3>
+                    <p class="project-description">Giao diện dashboard với biểu đồ động, thống kê trực quan và các widget tương tác dành cho hệ thống quản trị.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-file-code"></i> 3 files</span>
+                        <span><i class="fas fa-clock"></i> 6 giờ</span>
+                        <span><i class="fas fa-signal"></i> Trung cấp</span>
+                    </div>
+                    <a href="dashboard.html" class="project-link">
+                        <i class="fas fa-external-link-alt"></i> Truy cập Dashboard
+                    </a>
+                </div>
+                
+                <!-- Project 3 - Sắp có -->
+                <div class="project-card coming-soon">
+                    <div class="status-badge status-coming">SẮP CÓ</div>
+                    <div class="project-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="project-name">Game CSS Pure</h3>
+                    <p class="project-description">Tạo game đơn giản chỉ sử dụng HTML và CSS thuần túy, không JavaScript. Khám phá giới hạn của CSS.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-file-code"></i> 0 files</span>
+                        <span><i class="fas fa-clock"></i> 5 giờ</span>
+                        <span><i class="fas fa-signal"></i> Nâng cao</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        <i class="fas fa-clock"></i> Đang phát triển
+                    </a>
+                </div>
+            </div>
+            
+            <div class="instructions" id="instructions">
+                <h3><i class="fas fa-book"></i> Hướng dẫn sử dụng Dashboard</h3>
+                <ol>
+                    <li><strong>Truy cập nhanh:</strong> Nhấn vào card dự án để mở trang tương ứng trong tab mới.</li>
+                    <li><strong>Thêm dự án mới:</strong> Tạo file HTML mới (ví dụ: <code>lab2.html</code>), sau đó thêm card mới vào grid trong file này.</li>
+                    <li><strong>Cập nhật trạng thái:</strong> Thay đổi class <code>status-active</code> thành <code>status-coming</code> cho dự án đang phát triển.</li>
+                    <li><strong>Đếm số lượng:</strong> Hệ thống tự động đếm số dự án đã hoàn thành và sắp ra mắt.</li>
+                    <li><strong>Responsive:</strong> Dashboard tự động điều chỉnh layout trên mọi thiết bị.</li>
+                </ol>
+                <p style="margin-top: 20px; padding: 15px; background: rgba(108, 99, 255, 0.1); border-radius: 10px;">
+                    <i class="fas fa-lightbulb"></i> <strong>Mẹo:</strong> Bạn có thể sao chép cấu trúc card và chỉnh sửa nội dung để thêm dự án mới một cách nhanh chóng.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-home"></i> Dashboard Projects</h3>
+                    <p>Trang tổng hợp quản lý tất cả các bài tập và dự án CSS Animation</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-codepen"></i></a>
+                        <a href="#"><i class="fab fa-css3-alt"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Dự án hiện có</h3>
+                    <ul>
+                        <li><a href="index.html">Lab 1 - CSS Hover</a></li>
+                        <li><a href="ecommerce.html">E-commerce UI</a></li>
+                        <li><a href="dashboard.html">Dashboard Analytics</a></li>
+                        <li><a href="#">Lab 2 - Keyframes (sắp có)</a></li>
+                        <li><a href="#">Game CSS Pure (sắp có)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Tài nguyên</h3>
+                    <ul>
+                        <li><a href="assets/css/styles.css">File CSS chính</a></li>
+                        <li><a href="https://fontawesome.com">Font Awesome Icons</a></li>
+                        <li><a href="https://unsplash.com">Hình ảnh Unsplash</a></li>
+                        <li><a href="https://cubic-bezier.com">Cubic Bezier Generator</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 WE-MĐ06 - CSS Projects Dashboard. Cập nhật lần cuối: <span id="current-date"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Đếm số lượng dự án
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectCards = document.querySelectorAll('.project-card');
+            const activeProjects = document.querySelectorAll('.project-card:not(.coming-soon)').length;
+            const comingSoonProjects = document.querySelectorAll('.project-card.coming-soon').length;
+            
+            document.getElementById('project-count').textContent = activeProjects;
+            document.getElementById('coming-soon-count').textContent = comingSoonProjects;
+            
+            // Hiển thị ngày hiện tại
+            const currentDate = new Date();
+            const formattedDate = currentDate.toLocaleDateString('vi-VN', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+            document.getElementById('current-date').textContent = formattedDate;
+            
+            // Hiệu ứng scroll cho navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Thêm class active cho card khi hover (hiệu ứng phụ)
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    if(!this.classList.contains('coming-soon')) {
+                        this.style.transform = 'translateY(-10px)';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    if(!this.classList.contains('coming-soon')) {
+                        this.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
