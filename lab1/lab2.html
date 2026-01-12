@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2 - CSS Keyframes & Animation</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== STYLE RIÊNG CHO LAB 2 ===== */
+        
+        /* Bài 1: Marquee */
+        .marquee-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+        
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .marquee p {
+            display: inline-block;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            margin: 0;
+            padding-right: 50px;
+            animation: moveText 15s linear infinite;
+        }
+        
+        @keyframes moveText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        /* Bài 2: Rotate Box */
+        .rotate-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            background: var(--accent-gradient);
+            border-radius: 15px;
+            margin: 30px auto;
+            animation: rotateBox 3s linear infinite;
+            box-shadow: 0 10px 20px rgba(54, 209, 220, 0.3);
+        }
+        
+        @keyframes rotateBox {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* Bài 3: Fade-in Images */
+        .fade-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 40px;
+        }
+        
+        .fade-images {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .fade-image {
+            width: 250px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .fade-image:nth-child(1) {
+            animation: fadeIn 2s ease forwards;
+        }
+        
+        .fade-image:nth-child(2) {
+            animation: fadeIn 2s ease forwards 0.5s;
+        }
+        
+        .fade-image:nth-child(3) {
+            animation: fadeIn 2s ease forwards 1s;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Bài 4: Blinking Button */
+        .blink-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .cta {
+            padding: 20px 50px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            background: var(--secondary);
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 101, 132, 0.3);
+            animation: blink 1.5s infinite alternate;
+            transition: var(--transition);
+        }
+        
+        .cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(255, 101, 132, 0.4);
+        }
+        
+        @keyframes blink {
+            0% {
+                background: var(--secondary);
+                transform: scale(1);
+            }
+            50% {
+                background: var(--warning);
+                transform: scale(1.05);
+            }
+            100% {
+                background: #ff4500;
+                transform: scale(1);
+            }
+        }
+        
+        /* Bài 5: CSS Slider */
+        .slider-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 15px;
+            position: relative;
+        }
+        
+        .slider-track {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: slide 15s infinite;
+        }
+        
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        @keyframes slide {
+            0%, 25% {
+                transform: translateX(0);
+            }
+            33.33%, 58.33% {
+                transform: translateX(-33.33%);
+            }
+            66.66%, 91.66% {
+                transform: translateX(-66.66%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        
+        /* Lab 2 specific styles */
+        .lab2-section {
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .lab2-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .code-sample {
+            background: #1E1E1E;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            color: #9CDCFE;
+            font-size: 14px;
+        }
+        
+        .back-to-dashboard {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: var(--accent-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 40px auto;
+            transition: var(--transition);
+        }
+        
+        .back-to-dashboard:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(54, 209, 220, 0.3);
+        }
+        .back-to-main {
+    background: rgba(108, 99, 255, 0.1) !important;
+    border: 2px solid var(--primary) !important;
+    color: var(--primary) !important;
+    font-weight: 600 !important;
+}
+
+.back-to-main:hover {
+    background: var(--primary) !important;
+    color: white !important;
+    transform: translateX(-5px) !important;
+}
+
+/* Style cho các nút bài tập trong navigation */
+.main-nav ul li:nth-child(2) a { background: rgba(0, 184, 148, 0.1); color: var(--success); }
+.main-nav ul li:nth-child(3) a { background: rgba(253, 203, 110, 0.1); color: var(--warning); }
+.main-nav ul li:nth-child(4) a { background: rgba(54, 209, 220, 0.1); color: var(--accent); }
+.main-nav ul li:nth-child(5) a { background: rgba(255, 101, 132, 0.1); color: var(--secondary); }
+.main-nav ul li:nth-child(6) a { background: rgba(107, 91, 149, 0.1); color: #6b5b95; }
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.back-btn:hover {
+    background: var(--primary-dark);
+    transform: translateX(-3px);
+}
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-play-circle"></i>
+                <h1>Lab 2 - CSS Keyframes</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="mainindex.html" class="back-to-main">
+                        <i class="fas fa-arrow-left"></i> Dashboard
+                    </a></li>
+                    <li><a href="#marquee">Bài 1</a></li>
+                    <li><a href="#rotate">Bài 2</a></li>
+                    <li><a href="#fade">Bài 3</a></li>
+                    <li><a href="#blink">Bài 4</a></li>
+                    <li><a href="#slider">Bài 5</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro-section">
+            <h2><i class="fas fa-key"></i> Khám phá sức mạnh của CSS Keyframes</h2>
+            <p>Thực hành 5 bài tập animation nâng cao với @keyframes và infinite loop</p>
+        </section>
+
+        <!-- Bài 1: Marquee -->
+        <section id="marquee" class="lab2-section card">
+            <div class="section-header">
+                <h2><span class="number-badge">1</span> Text chạy ngang (Marquee)</h2>
+                <p class="section-desc">Chữ chạy liên tục từ phải sang trái với animation infinite</p>
+            </div>
+            <div class="marquee-container">
+                <div class="marquee">
+                    <p>✨ CSS ANIMATION - KEYFRAMES - INFINITE LOOP - HỌC VIỆN CNTT BACHKHOA ✨</p>
+                </div>
+            </div>
+            <div class="code-sample">
+                <code>@keyframes moveText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}</code>
+            </div>
+        </section>
+
+        <!-- Bài 2: Rotate Box -->
+        <section id="rotate" class="lab2-section card">
+            <div class="section-header">
+                <h2><span class="number-badge">2</span> Hộp quay vòng (Rotate loop)</h2>
+                <p class="section-desc">Khối vuông xoay 360° liên tục với infinite animation</p>
+            </div>
+            <div class="rotate-container">
+                <p>Khối vuông đang xoay vô hạn:</p>
+                <div class="box"></div>
+                <p>Animation: rotate 3s linear infinite</p>
+            </div>
+            <div class="code-sample">
+                <code>@keyframes rotateBox {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}</code>
+            </div>
+        </section>
+
+        <!-- Bài 3: Fade-in Images -->
+        <section id="fade" class="lab2-section card">
+            <div class="section-header">
+                <h2><span class="number-badge">3</span> Ảnh xuất hiện dần (Fade-in sequence)</h2>
+                <p class="section-desc">3 ảnh xuất hiện tuần tự với animation-delay khác nhau</p>
+            </div>
+            <div class="fade-container">
+                <p>Ảnh sẽ xuất hiện lần lượt với độ trễ 0.5s:</p>
+                <div class="fade-images">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Ảnh 1" class="fade-image">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Ảnh 2" class="fade-image">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Ảnh 3" class="fade-image">
+                </div>
+            </div>
+            <div class="code-sample">
+                <code>/* Animation delay cho từng ảnh */
+.fade-image:nth-child(1) { animation-delay: 0s; }
+.fade-image:nth-child(2) { animation-delay: 0.5s; }
+.fade-image:nth-child(3) { animation-delay: 1s; }</code>
+            </div>
+        </section>
+
+        <!-- Bài 4: Blinking Button -->
+        <section id="blink" class="lab2-section card">
+            <div class="section-header">
+                <h2><span class="number-badge">4</span> Nút nhấp nháy (Call to Action)</h2>
+                <p class="section-desc">Nút thay đổi màu sắc liên tục để thu hút sự chú ý</p>
+            </div>
+            <div class="blink-container">
+                <p>Nhấp nháy vô hạn để thu hút người dùng:</p>
+                <button class="cta">
+                    <i class="fas fa-shopping-cart"></i> MUA NGAY - ƯU ĐÃI 50%
+                </button>
+                <p style="margin-top: 20px; color: var(--gray);">Nút thay đổi màu từ đỏ → cam → đỏ</p>
+            </div>
+            <div class="code-sample">
+                <code>@keyframes blink {
+    0% { background: #FF6584; }
+    50% { background: #FDCB6E; transform: scale(1.05); }
+    100% { background: #ff4500; }
+}</code>
+            </div>
+        </section>
+
+        <!-- Bài 5: CSS Slider -->
+        <section id="slider" class="lab2-section card">
+            <div class="section-header">
+                <h2><span class="number-badge">5</span> Slider ảnh tự động bằng CSS</h2>
+                <p class="section-desc">Slider chuyển ảnh tự động sau mỗi 5s không cần JavaScript</p>
+            </div>
+            <div class="slider-container">
+                <p>Slider tự động chuyển ảnh mỗi 5 giây:</p>
+                <div class="slider">
+                    <div class="slider-track">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Slider 1" class="slider-image">
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Slider 2" class="slider-image">
+                        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Slider 3" class="slider-image">
+                    </div>
+                </div>
+                <p style="margin-top: 20px; color: var(--gray);">Mỗi ảnh hiển thị 5 giây, tổng chu kỳ 15 giây</p>
+            </div>
+            <div class="code-sample">
+                <code>@keyframes slide {
+    0%, 25% { transform: translateX(0); }
+    33.33%, 58.33% { transform: translateX(-33.33%); }
+    66.66%, 91.66% { transform: translateX(-66.66%); }
+    100% { transform: translateX(0); }
+}</code>
+            </div>
+        </section>
+
+        <!-- Nút quay lại Dashboard -->
+        <div style="text-align: center; margin: 50px 0;">
+            <a href="../mainindex.html" class="back-to-dashboard">
+                <i class="fas fa-arrow-left"></i> Quay lại Dashboard
+            </a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-play-circle"></i> Lab 2 - Keyframes</h3>
+                    <p>Bài tập thực hành CSS Keyframes & Animation với 5 hiệu ứng nâng cao</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-codepen"></i></a>
+                        <a href="#"><i class="fab fa-css3-alt"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Bài tập</h3>
+                    <ul>
+                        <li><a href="#marquee">Text chạy ngang</a></li>
+                        <li><a href="#rotate">Hộp quay vòng</a></li>
+                        <li><a href="#fade">Ảnh xuất hiện dần</a></li>
+                        <li><a href="#blink">Nút nhấp nháy</a></li>
+                        <li><a href="#slider">Slider ảnh tự động</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 WE-MĐ06 - CSS Keyframes Lab 2. Animation duration: infinite</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hiệu ứng scroll cho Lab 2
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Hiệu ứng khi scroll cho các section
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.lab2-section');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if(sectionTop < windowHeight * 0.85) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+
+        // Tự động kích hoạt animation khi trang load
+        window.addEventListener('load', function() {
+            const sections = document.querySelectorAll('.lab2-section');
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    section.classList.add('visible');
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
