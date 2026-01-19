@@ -1,0 +1,1597 @@
+<!doctype html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IELTS Landing — Premium English Testing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="ielts_reading.css">
+</head>
+<body>
+  <!-- Loading Spinner -->
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
+    <p>Loading IELTS Experience...</p>
+  </div>
+
+  <!-- Floating Action Button -->
+  <button class="fab" id="fab" title="Back to Top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <header id="mainHeader">
+    <div class="brand" id="brandLogo">
+      <i class="fas fa-certificate"></i>
+      IELTS
+    </div>
+    <nav class="nav">
+      <a href="#" id="linkTestTaker">
+        <i class="fas fa-user-graduate"></i>
+        Test Takers
+      </a>
+      <a href="#" id="linkOrganisations">
+        <i class="fas fa-building"></i>
+        Organisations
+      </a>
+      <a href="#" id="linkResearchers">
+        <i class="fas fa-flask"></i>
+        Researchers
+      </a>
+      <a href="#" id="linkNews">
+        <i class="fas fa-newspaper"></i>
+        News
+      </a>
+    </nav>
+    <div class="buttons">
+      <button class="toggle-theme" id="toggleTheme" title="Toggle Theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="book" id="bookTestBtn">
+        <i class="fas fa-calendar-check"></i>
+        Book a test
+      </button>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section class="hero" id="home">
+    <div class="hero__bg"></div>
+    <div class="hero__content">
+      <h1>The World's <span>Most Trusted</span> English Test</h1>
+      <p>Join over 3 million test takers each year who trust IELTS for their education, career, and migration goals</p>
+      <div class="cta-row">
+        <a href="#" class="btn" id="openReadingPractice">
+          <i class="fas fa-pencil-alt"></i>
+          Reading Practice
+        </a>
+        <a href="#" class="btn btn-secondary" id="openRegistration">
+          <i class="fas fa-user-plus"></i>
+          Register Now
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll to explore</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <section class="info" id="info">
+    <h2>Why Choose IELTS?</h2>
+    <p>Trusted by governments, universities, and employers globally. Here's what makes IELTS the preferred choice:</p>
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-globe-americas"></i>
+        <h3>Global Recognition</h3>
+        <p>Accepted by over 11,000 organizations across 140 countries worldwide</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Premium Security</h3>
+        <p>Advanced biometric verification and comprehensive test security measures</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-bolt"></i>
+        <h3>Fast Results</h3>
+        <p>Receive your results within 3-5 days for computer-delivered tests</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Proven Success</h3>
+        <p>Backed by 30+ years of research and continuous improvement</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Test Takers Section -->
+  <section class="page-section" id="testTakersPage">
+    <button class="back-home" id="backHomeFromTestTakers">
+      <i class="fas fa-arrow-left"></i>
+      Back to Home
+    </button>
+    
+    <div class="page-header">
+      <h2>For Test Takers</h2>
+      <p>Everything you need to prepare for your IELTS test</p>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-book-open"></i> Preparation Materials</h3>
+      <p>Access free practice tests, sample questions, and preparation materials to help you succeed in your IELTS test.</p>
+      
+      <div class="cards" style="margin-top: 2rem;">
+        <div class="card">
+          <i class="fas fa-file-alt"></i>
+          <h4>Practice Tests</h4>
+          <p>Full-length practice tests with answer keys for all modules</p>
+          <button class="btn" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-download"></i>
+            Download
+          </button>
+        </div>
+        <div class="card">
+          <i class="fas fa-video"></i>
+          <h4>Video Lessons</h4>
+          <p>Expert tips and strategies from certified IELTS instructors</p>
+          <button class="btn" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-play"></i>
+            Watch Now
+          </button>
+        </div>
+        <div class="card">
+          <i class="fas fa-mobile-alt"></i>
+          <h4>Mobile App</h4>
+          <p>Practice on the go with our official IELTS preparation app</p>
+          <button class="btn" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-download"></i>
+            Get App
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-map-marker-alt"></i> Test Centers</h3>
+      <p>Find a test center near you and book your test date.</p>
+      
+      <div class="centers-grid">
+        <div class="center-card">
+          <h4>Hanoi Center</h4>
+          <p><i class="fas fa-map-pin"></i> 123 English Street, Hanoi</p>
+          <p><i class="fas fa-phone"></i> +84 24 1234 5678</p>
+          <p><i class="fas fa-calendar"></i> Available: Mon-Sat</p>
+          <button class="btn" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-calendar"></i>
+            Book Now
+          </button>
+        </div>
+        <div class="center-card">
+          <h4>Ho Chi Minh Center</h4>
+          <p><i class="fas fa-map-pin"></i> 456 International Road, HCMC</p>
+          <p><i class="fas fa-phone"></i> +84 28 8765 4321</p>
+          <p><i class="fas fa-calendar"></i> Available: Mon-Sun</p>
+          <button class="btn" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-calendar"></i>
+            Book Now
+          </button>
+        </div>
+        <div class="center-card">
+          <h4>Da Nang Center</h4>
+          <p><i class="fas fa-map-pin"></i> 789 Coastal Avenue, Da Nang</p>
+          <p><i class="fas fa-phone"></i> +84 236 555 8888</p>
+          <p><i class="fas fa-calendar"></i> Available: Tue-Sat</p>
+          <button class="btn" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-calendar"></i>
+            Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-graduation-cap"></i> Test Formats</h3>
+      <p>Choose the test format that best suits your needs:</p>
+      
+      <div class="cards" style="margin-top: 2rem;">
+        <div class="card">
+          <i class="fas fa-university"></i>
+          <h4>IELTS Academic</h4>
+          <p>For students applying for higher education or professional registration</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-briefcase"></i>
+          <h4>IELTS General Training</h4>
+          <p>For migration to English-speaking countries and work experience</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-passport"></i>
+          <h4>IELTS for UKVI</h4>
+          <p>For UK visa and immigration applications</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Organisations Section -->
+  <section class="page-section" id="organisationsPage">
+    <button class="back-home" id="backHomeFromOrganisations">
+      <i class="fas fa-arrow-left"></i>
+      Back to Home
+    </button>
+    
+    <div class="page-header">
+      <h2>For Organisations</h2>
+      <p>Partner with the world's leading English language test</p>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-handshake"></i> Why Recognise IELTS?</h3>
+      <p>IELTS is trusted by thousands of organisations worldwide for its reliability and accuracy in assessing English language proficiency.</p>
+      
+      <div class="cards" style="margin-top: 2rem;">
+        <div class="card">
+          <i class="fas fa-university"></i>
+          <h4>Educational Institutions</h4>
+          <p>Over 10,000 universities, colleges, and schools worldwide accept IELTS for admission purposes.</p>
+          <ul style="text-align: left; margin-top: 1rem; color: var(--gray);">
+            <li>Undergraduate and postgraduate admissions</li>
+            <li>Scholarship applications</li>
+            <li>Exchange programs</li>
+          </ul>
+        </div>
+        <div class="card">
+          <i class="fas fa-briefcase"></i>
+          <h4>Employers & Corporations</h4>
+          <p>Leading companies use IELTS for recruitment, promotion, and professional development.</p>
+          <ul style="text-align: left; margin-top: 1rem; color: var(--gray);">
+            <li>Recruitment screening</li>
+            <li>Professional certification</li>
+            <li>International assignments</li>
+          </ul>
+        </div>
+        <div class="card">
+          <i class="fas fa-passport"></i>
+          <h4>Government Agencies</h4>
+          <p>Immigration authorities in multiple countries trust IELTS for visa and citizenship applications.</p>
+          <ul style="text-align: left; margin-top: 1rem; color: var(--gray);">
+            <li>Permanent residency</li>
+            <li>Citizenship applications</li>
+            <li>Professional migration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-chart-bar"></i> Recognition Resources</h3>
+      <p>We provide comprehensive support for organisations including score comparison tools, research reports, and training workshops.</p>
+      
+      <div class="cards" style="margin-top: 2rem;">
+        <div class="card">
+          <i class="fas fa-tools"></i>
+          <h4>Score Comparison Tools</h4>
+          <p>Access our online tools to compare IELTS scores with other language tests</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-file-contract"></i>
+          <h4>Recognition Kit</h4>
+          <p>Complete set of materials to promote your recognition of IELTS</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-users"></i>
+          <h4>Training Workshops</h4>
+          <p>Specialized training for admission staff and HR professionals</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Researchers Section -->
+  <section class="page-section" id="researchersPage">
+    <button class="back-home" id="backHomeFromResearchers">
+      <i class="fas fa-arrow-left"></i>
+      Back to Home
+    </button>
+    
+    <div class="page-header">
+      <h2>For Researchers</h2>
+      <p>Advancing language assessment through rigorous research</p>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-search"></i> Research & Development</h3>
+      <p>IELTS invests heavily in research to ensure the test remains valid, reliable, and fair. Our research program covers various aspects of language assessment and testing methodology.</p>
+      
+      <div class="cards" style="margin-top: 2rem;">
+        <div class="card">
+          <i class="fas fa-chart-bar"></i>
+          <h4>Validation Studies</h4>
+          <p>Ongoing research to ensure test accuracy, fairness, and reliability across different test taker groups.</p>
+          <ul style="text-align: left; margin-top: 1rem; color: var(--gray);">
+            <li>Test fairness studies</li>
+            <li>Bias detection and elimination</li>
+            <li>Cross-cultural validation</li>
+          </ul>
+        </div>
+        <div class="card">
+          <i class="fas fa-graduation-cap"></i>
+          <h4>Academic Partnerships</h4>
+          <p>Collaboration with leading universities and research institutions worldwide to advance the field of language assessment.</p>
+          <ul style="text-align: left; margin-top: 1rem; color: var(--gray);">
+            <li>Cambridge University</li>
+            <li>British Council</li>
+            <li>IDP Education</li>
+          </ul>
+        </div>
+        <div class="card">
+          <i class="fas fa-paper-plane"></i>
+          <h4>Publications</h4>
+          <p>Access our research papers, studies, and academic publications in leading journals.</p>
+          <ul style="text-align: left; margin-top: 1rem; color: var(--gray);">
+            <li>IELTS Research Reports</li>
+            <li>Academic journal articles</li>
+            <li>Conference proceedings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-flask"></i> Research Areas</h3>
+      <p>Our research covers multiple domains to ensure comprehensive understanding and continuous improvement of language assessment.</p>
+      
+      <div class="cards" style="margin-top: 2rem;">
+        <div class="card">
+          <i class="fas fa-brain"></i>
+          <h4>Cognitive Processing</h4>
+          <p>Studies on how test takers process language during examination</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-laptop-code"></i>
+          <h4>Technology in Assessment</h4>
+          <p>Research on computer-delivered testing and automated scoring</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-globe"></i>
+          <h4>Cross-cultural Communication</h4>
+          <p>Studies on language use in global contexts and international settings</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- News Section -->
+<section class="page-section" id="newsPage">
+  <button class="back-home" id="backHomeFromNews">
+    <i class="fas fa-arrow-left"></i>
+    Back to Home
+  </button>
+  
+  <div class="page-header">
+    <h2>News & Events</h2>
+    <p>Stay updated with the latest IELTS news and events</p>
+  </div>
+
+  <div class="page-content">
+    <h3><i class="fas fa-newspaper"></i> Latest News</h3>
+    
+    <div class="timeline">
+      <!-- News Item 1 -->
+      <div class="timeline-item">
+        <h4>New Test Centers Opening in 2024</h4>
+        <p><strong>January 15, 2024</strong> - IELTS announces the opening of 15 new test centers across Southeast Asia to meet growing demand. The new centers will offer both computer-delivered and paper-based tests with state-of-the-art facilities.</p>
+        <button class="btn read-more-btn" data-news="1" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+          <i class="fas fa-readme"></i>
+          Read More
+        </button>
+      </div>
+
+      <!-- News Item 2 -->
+      <div class="timeline-item">
+        <h4>Enhanced Security Measures Implemented</h4>
+        <p><strong>December 3, 2023</strong> - New biometric verification systems have been installed at all test centers worldwide to ensure the highest level of test security and integrity. The enhanced measures include facial recognition and digital fingerprinting.</p>
+        <button class="btn read-more-btn" data-news="2" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+          <i class="fas fa-readme"></i>
+          Read More
+        </button>
+      </div>
+
+      <!-- News Item 3 -->
+      <div class="timeline-item">
+        <h4>Research Symposium 2024 Announced</h4>
+        <p><strong>November 20, 2023</strong> - The annual IELTS Research Symposium will be held in London on March 15-16, 2024. Researchers from around the world will present latest findings in language assessment and testing methodology.</p>
+        <button class="btn read-more-btn" data-news="3" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+          <i class="fas fa-readme"></i>
+          Read More
+        </button>
+      </div>
+
+      <!-- News Item 4 -->
+      <div class="timeline-item">
+        <h4>Mobile App Update Released</h4>
+        <p><strong>October 5, 2023</strong> - The official IELTS mobile app has been updated with new practice materials and improved user interface. The app now includes AI-powered speaking practice and personalized study recommendations.</p>
+        <button class="btn read-more-btn" data-news="4" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+          <i class="fas fa-readme"></i>
+          Read More
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- News Modals -->
+<!-- Modal 1: New Test Centers - Updated with Images -->
+<div class="news-modal" id="newsModal1">
+  <div class="news-modal-content">
+    <button class="news-modal-close">&times;</button>
+    <div class="news-modal-header">
+      <h3>New Test Centers Opening in 2024</h3>
+      <div class="news-date">January 15, 2024</div>
+    </div>
+    <div class="news-modal-body">
+      <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+           alt="Modern test center" class="news-modal-image">
+      
+      <p>IELTS is proud to announce the expansion of our testing network with 15 new state-of-the-art test centers across Southeast Asia. This strategic expansion aims to meet the growing demand for English language testing in the region and provide more accessible testing options for candidates.</p>
+      
+      <div class="news-statistics">
+        <div class="news-stat-item">
+          <div class="news-stat-number">15</div>
+          <div class="news-stat-label">New Centers</div>
+        </div>
+        <div class="news-stat-item">
+          <div class="news-stat-number">6</div>
+          <div class="news-stat-label">Countries</div>
+        </div>
+        <div class="news-stat-item">
+          <div class="news-stat-number">50K+</div>
+          <div class="news-stat-label">Annual Capacity</div>
+        </div>
+        <div class="news-stat-item">
+          <div class="news-stat-number">100%</div>
+          <div class="news-stat-label">Digital Ready</div>
+        </div>
+      </div>
+
+      <div class="news-highlight">
+        <h5>🎯 Key Features of New Centers:</h5>
+        <div class="news-feature-list">
+          <div class="news-feature-item">
+            <div class="news-feature-icon">💻</div>
+            <h5>Computer Testing</h5>
+            <p>Advanced computer-delivered testing facilities</p>
+          </div>
+          <div class="news-feature-item">
+            <div class="news-feature-icon">♿</div>
+            <h5>Accessibility</h5>
+            <p>Enhanced features for candidates with disabilities</p>
+          </div>
+          <div class="news-feature-item">
+            <div class="news-feature-icon">🔒</div>
+            <h5>Security</h5>
+            <p>Biometric systems for test integrity</p>
+          </div>
+          <div class="news-feature-item">
+            <div class="news-feature-icon">🛋️</div>
+            <h5>Comfort</h5>
+            <p>Modern amenities and waiting areas</p>
+          </div>
+        </div>
+      </div>
+
+      <h4>📍 New Locations Include:</h4>
+      <div class="news-image-grid">
+        <div class="news-image-item">
+          <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Hanoi Center">
+          <div class="news-image-caption">Hanoi, Vietnam</div>
+        </div>
+        <div class="news-image-item">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Bangkok Center">
+          <div class="news-image-caption">Bangkok, Thailand</div>
+        </div>
+        <div class="news-image-item">
+          <img src="https://images.unsplash.com/photo-1542931287-023b922fa89b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Kuala Lumpur Center">
+          <div class="news-image-caption">Kuala Lumpur, Malaysia</div>
+        </div>
+        <div class="news-image-item">
+          <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Singapore Center">
+          <div class="news-image-caption">Singapore</div>
+        </div>
+      </div>
+
+      <h4>📅 Implementation Timeline</h4>
+      <div class="news-timeline">
+        <div class="news-timeline-item">
+          <div class="news-timeline-date">March 2024</div>
+          <p><strong>Phase 1:</strong> 5 centers in major metropolitan areas begin operations</p>
+        </div>
+        <div class="news-timeline-item">
+          <div class="news-timeline-date">June 2024</div>
+          <p><strong>Phase 2:</strong> Additional 7 centers open across secondary cities</p>
+        </div>
+        <div class="news-timeline-item">
+          <div class="news-timeline-date">September 2024</div>
+          <p><strong>Phase 3:</strong> Remaining 3 centers in emerging markets commence operations</p>
+        </div>
+      </div>
+
+      <div class="news-highlight">
+        <h5>💡 Benefits for Test Takers:</h5>
+        <ul>
+          <li>More flexible test dates and locations</li>
+          <li>Reduced travel time and costs</li>
+          <li>Faster result processing with new infrastructure</li>
+          <li>Enhanced test experience with modern facilities</li>
+        </ul>
+      </div>
+
+      <p><strong>Booking Information:</strong> Test dates at the new centers will be available for booking starting February 1, 2024. Early booking is recommended as high demand is anticipated.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2: Enhanced Security - Updated with Images -->
+<div class="news-modal" id="newsModal2">
+  <div class="news-modal-content">
+    <button class="news-modal-close">&times;</button>
+    <div class="news-modal-header">
+      <h3>Enhanced Security Measures Implemented</h3>
+      <div class="news-date">December 3, 2023</div>
+    </div>
+    <div class="news-modal-body">
+      <img src="https://images.unsplash.com/photo-1563013546-7c5c5ae6c6e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+           alt="Security technology" class="news-modal-image">
+      
+      <p>IELTS has implemented comprehensive new security measures across all test centers worldwide to ensure the highest standards of test integrity and security. These enhancements represent our ongoing commitment to maintaining the credibility and value of IELTS certification.</p>
+      
+      <div class="news-feature-list">
+        <div class="news-feature-item">
+          <div class="news-feature-icon">👁️</div>
+          <h5>Facial Recognition</h5>
+          <p>Advanced AI-powered identity verification</p>
+        </div>
+        <div class="news-feature-item">
+          <div class="news-feature-icon">👆</div>
+          <h5>Fingerprinting</h5>
+          <p>Secure digital fingerprint capture</p>
+        </div>
+        <div class="news-feature-item">
+          <div class="news-feature-icon">🎤</div>
+          <h5>Voice Auth</h5>
+          <p>Speaking test verification</p>
+        </div>
+        <div class="news-feature-item">
+          <div class="news-feature-icon">🫀</div>
+          <h5>Palm Vein</h5>
+          <p>Additional biometric security layer</p>
+        </div>
+      </div>
+
+      <h4>🔒 New Security Features:</h4>
+      <div class="news-highlight">
+        <h5>Biometric Verification Systems:</h5>
+        <ul>
+          <li><strong>Facial Recognition:</strong> Advanced AI-powered facial recognition technology</li>
+          <li><strong>Digital Fingerprinting:</strong> Secure fingerprint capture and verification</li>
+          <li><strong>Voice Authentication:</strong> For speaking test verification</li>
+          <li><strong>Palm Vein Recognition:</strong> Additional biometric layer for high-security centers</li>
+        </ul>
+      </div>
+
+      <div class="news-image-grid">
+        <div class="news-image-item">
+          <img src="https://images.unsplash.com/photo-1586769852044-692b6e5f593d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Security checkpoint">
+          <div class="news-image-caption">Multi-point Verification</div>
+        </div>
+        <div class="news-image-item">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Monitoring center">
+          <div class="news-image-caption">24/7 Monitoring</div>
+        </div>
+        <div class="news-image-item">
+          <img src="https://images.unsplash.com/photo-1551135049-8a33b42738b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Data protection">
+          <div class="news-image-caption">Data Encryption</div>
+        </div>
+      </div>
+
+      <div class="news-highlight">
+        <h5>🎯 Impact on Test Takers:</h5>
+        <ul>
+          <li><strong>Increased Security:</strong> Enhanced protection against identity fraud</li>
+          <li><strong>Faster Check-in:</strong> Streamlined verification process</li>
+          <li><strong>Global Recognition:</strong> Strengthened credibility of IELTS certification</li>
+          <li><strong>Privacy Protection:</strong> Strict adherence to data protection standards</li>
+        </ul>
+      </div>
+
+      <p><strong>Note:</strong> These security enhancements do not change the test format, content, or scoring criteria. The test experience remains the same, with added security measures to protect the integrity of your results.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3: Research Symposium - Updated with Images -->
+<div class="news-modal" id="newsModal3">
+  <div class="news-modal-content">
+    <button class="news-modal-close">&times;</button>
+    <div class="news-modal-header">
+      <h3>Research Symposium 2024 Announced</h3>
+      <div class="news-date">November 20, 2023</div>
+    </div>
+    <div class="news-modal-body">
+      <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+           alt="Conference venue" class="news-modal-image">
+      
+      <p>The annual IELTS Research Symposium 2024 will bring together leading researchers, educators, and assessment specialists from around the world to discuss the latest developments in language testing and assessment methodology.</p>
+      
+      <div class="news-highlight">
+        <h5>📅 Event Details:</h5>
+        <ul>
+          <li><strong>Date:</strong> March 15-16, 2024</li>
+          <li><strong>Location:</strong> London, United Kingdom</li>
+          <li><strong>Venue:</strong> International Conference Centre London</li>
+          <li><strong>Format:</strong> Hybrid (In-person & Virtual)</li>
+        </ul>
+      </div>
+
+      <div class="news-image-grid">
+        <div class="news-image-item">
+          <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dr. Sarah Johnson">
+          <div class="news-image-caption">Dr. Sarah Johnson</div>
+        </div>
+        <div class="news-image-item">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Prof. Michael Chen">
+          <div class="news-image-caption">Prof. Michael Chen</div>
+        </div>
+        <div class="news-image-item">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dr. Elena Rodriguez">
+          <div class="news-image-caption">Dr. Elena Rodriguez</div>
+        </div>
+      </div>
+
+      <h4>🎤 Keynote Speakers:</h4>
+      <ul>
+        <li><strong>Dr. Sarah Johnson</strong> - Cambridge University: "The Future of Language Assessment in Digital Era"</li>
+        <li><strong>Prof. Michael Chen</strong> - University of Melbourne: "AI and Machine Learning in Language Testing"</li>
+        <li><strong>Dr. Elena Rodriguez</strong> - British Council: "Global Trends in English Language Proficiency"</li>
+        <li><strong>Prof. James Wilson</strong> - IDP Education: "Ensuring Test Fairness Across Cultures"</li>
+      </ul>
+
+      <div class="news-statistics">
+        <div class="news-stat-item">
+          <div class="news-stat-number">50+</div>
+          <div class="news-stat-label">Speakers</div>
+        </div>
+        <div class="news-stat-item">
+          <div class="news-stat-number">4</div>
+          <div class="news-stat-label">Research Tracks</div>
+        </div>
+        <div class="news-stat-item">
+          <div class="news-stat-number">200+</div>
+          <div class="news-stat-label">Papers</div>
+        </div>
+        <div class="news-stat-item">
+          <div class="news-stat-number">500+</div>
+          <div class="news-stat-label">Attendees</div>
+        </div>
+      </div>
+
+      <div class="news-highlight">
+        <h5>💼 Registration Information:</h5>
+        <ul>
+          <li><strong>Early Bird (until Jan 31):</strong> £250 (in-person), £100 (virtual)</li>
+          <li><strong>Regular (Feb 1-Mar 1):</strong> £350 (in-person), £150 (virtual)</li>
+          <li><strong>Student Rate:</strong> 50% discount available</li>
+          <li><strong>Group Discounts:</strong> Available for groups of 5+</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4: Mobile App Update - Updated with Images -->
+<div class="news-modal" id="newsModal4">
+  <div class="news-modal-content">
+    <button class="news-modal-close">&times;</button>
+    <div class="news-modal-header">
+      <h3>Mobile App Update Released</h3>
+      <div class="news-date">October 5, 2023</div>
+    </div>
+    <div class="news-modal-body">
+      <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+           alt="Mobile app interface" class="news-modal-image">
+      
+      <p>The official IELTS mobile app has been completely redesigned with new features, enhanced user experience, and advanced learning tools to help candidates prepare more effectively for their tests.</p>
+      
+      <div class="news-feature-list">
+        <div class="news-feature-item">
+          <div class="news-feature-icon">🗣️</div>
+          <h5>AI Speaking</h5>
+          <p>Real-time speech analysis and feedback</p>
+        </div>
+        <div class="news-feature-item">
+          <div class="news-feature-icon">📊</div>
+          <h5>Study Plans</h5>
+          <p>Personalized learning schedules</p>
+        </div>
+        <div class="news-feature-item">
+          <div class="news-feature-icon">📈</div>
+          <h5>Progress Tracking</h5>
+          <p>Detailed performance analytics</p>
+        </div>
+        <div class="news-feature-item">
+          <div class="news-feature-icon">📚</div>
+          <h5>Vocabulary</h5>
+          <p>Smart flashcards with spaced repetition</p>
+        </div>
+      </div>
+
+      <div class="news-image-grid">
+        <div class="news-image-item">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="App speaking feature">
+          <div class="news-image-caption">Speaking Practice</div>
+        </div>
+        <div class="news-image-item">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="App analytics">
+          <div class="news-image-caption">Progress Analytics</div>
+        </div>
+        <div class="news-image-item">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="App interface">
+          <div class="news-image-caption">New Interface</div>
+        </div>
+      </div>
+
+      <div class="news-statistics">
+        <div class="news-stat-item">
+          <div class="news-stat-number">4.8★</div>
+          <div class="news-stat-label">App Store Rating</div>
+        </div>
+        <div class="news-stat-item">
+          <div class="news-stat-number">1M+</div>
+          <div class="news-stat-label">Downloads</div>
+        </div>
+        <div class="news-stat-item">
+          <div class="news-stat-number">95%</div>
+          <div class="news-stat-label">User Satisfaction</div>
+        </div>
+        <div class="news-stat-item">
+          <div class="news-stat-number">24/7</div>
+          <div class="news-stat-label">Support</div>
+        </div>
+      </div>
+
+      <div class="news-highlight">
+        <h5>💰 Pricing Options:</h5>
+        <ul>
+          <li><strong>Free Version:</strong> Basic practice tests and limited features</li>
+          <li><strong>Premium Subscription:</strong> £9.99/month - Full access to all features</li>
+          <li><strong>3-Month Package:</strong> £24.99 (save 17%)</li>
+          <li><strong>6-Month Package:</strong> £44.99 (save 25%)</li>
+        </ul>
+      </div>
+
+      <div class="news-timeline">
+        <div class="news-timeline-item">
+          <div class="news-timeline-date">October 2023</div>
+          <p><strong>Version 3.0 Launch:</strong> Complete redesign with AI features</p>
+        </div>
+        <div class="news-timeline-item">
+          <div class="news-timeline-date">November 2023</div>
+          <p><strong>User Feedback:</strong> Implemented user-requested features</p>
+        </div>
+        <div class="news-timeline-item">
+          <div class="news-timeline-date">December 2023</div>
+          <p><strong>Performance Update:</strong> Optimized app performance and stability</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!doctype html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IELTS Landing — Premium English Testing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="ielts_reading.css">
+</head>
+<body>
+  <!-- Loading Spinner -->
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
+    <p>Loading IELTS Experience...</p>
+  </div>
+
+  <!-- Floating Action Button -->
+  <button class="fab" id="fab" title="Back to Top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <header id="mainHeader">
+    <div class="brand" id="brandLogo">
+      <i class="fas fa-certificate"></i>
+      IELTS
+    </div>
+    <nav class="nav">
+      <a href="#" id="linkTestTaker">
+        <i class="fas fa-user-graduate"></i>
+        Test Takers
+      </a>
+      <a href="#" id="linkOrganisations">
+        <i class="fas fa-building"></i>
+        Organisations
+      </a>
+      <a href="#" id="linkResearchers">
+        <i class="fas fa-flask"></i>
+        Researchers
+      </a>
+      <a href="#" id="linkNews">
+        <i class="fas fa-newspaper"></i>
+        News
+      </a>
+    </nav>
+    <div class="buttons">
+      <button class="toggle-theme" id="toggleTheme" title="Toggle Theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="book" id="bookTestBtn">
+        <i class="fas fa-calendar-check"></i>
+        Book a test
+      </button>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section class="hero" id="home">
+    <div class="hero__bg"></div>
+    <div class="hero__content">
+      <h1>The World's <span>Most Trusted</span> English Test</h1>
+      <p>Join over 3 million test takers each year who trust IELTS for their education, career, and migration goals</p>
+      <div class="cta-row">
+        <a href="#" class="btn" id="openReadingPractice">
+          <i class="fas fa-pencil-alt"></i>
+          Reading Practice
+        </a>
+        <a href="#" class="btn btn-secondary" id="openRegistration">
+          <i class="fas fa-user-plus"></i>
+          Register Now
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll to explore</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <section class="info" id="info">
+    <h2>Why Choose IELTS?</h2>
+    <p>Trusted by governments, universities, and employers globally. Here's what makes IELTS the preferred choice:</p>
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-globe-americas"></i>
+        <h3>Global Recognition</h3>
+        <p>Accepted by over 11,000 organizations across 140 countries worldwide</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Premium Security</h3>
+        <p>Advanced biometric verification and comprehensive test security measures</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-bolt"></i>
+        <h3>Fast Results</h3>
+        <p>Receive your results within 3-5 days for computer-delivered tests</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Proven Success</h3>
+        <p>Backed by 30+ years of research and continuous improvement</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Test Takers Section -->
+  <section class="page-section" id="testTakersPage">
+    <button class="back-home" id="backHomeFromTestTakers">
+      <i class="fas fa-arrow-left"></i>
+      Back to Home
+    </button>
+    
+    <div class="page-header">
+      <h2>For Test Takers</h2>
+      <p>Everything you need to prepare for your IELTS test</p>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-book-open"></i> Preparation Materials</h3>
+      <p>Access free practice tests, sample questions, and preparation materials to help you succeed in your IELTS test.</p>
+      
+      <div class="cards" style="margin-top: 2rem;">
+        <div class="card">
+          <i class="fas fa-file-alt"></i>
+          <h4>Practice Tests</h4>
+          <p>Full-length practice tests with answer keys for all modules</p>
+          <button class="btn" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-download"></i>
+            Download
+          </button>
+        </div>
+        <div class="card">
+          <i class="fas fa-video"></i>
+          <h4>Video Lessons</h4>
+          <p>Expert tips and strategies from certified IELTS instructors</p>
+          <button class="btn" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-play"></i>
+            Watch Now
+          </button>
+        </div>
+        <div class="card">
+          <i class="fas fa-mobile-alt"></i>
+          <h4>Mobile App</h4>
+          <p>Practice on the go with our official IELTS preparation app</p>
+          <button class="btn" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-download"></i>
+            Get App
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-map-marker-alt"></i> Test Centers</h3>
+      <p>Find a test center near you and book your test date.</p>
+      
+      <div class="centers-grid">
+        <div class="center-card">
+          <h4>Hanoi Center</h4>
+          <p><i class="fas fa-map-pin"></i> 123 English Street, Hanoi</p>
+          <p><i class="fas fa-phone"></i> +84 24 1234 5678</p>
+          <p><i class="fas fa-calendar"></i> Available: Mon-Sat</p>
+          <button class="btn" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-calendar"></i>
+            Book Now
+          </button>
+        </div>
+        <div class="center-card">
+          <h4>Ho Chi Minh Center</h4>
+          <p><i class="fas fa-map-pin"></i> 456 International Road, HCMC</p>
+          <p><i class="fas fa-phone"></i> +84 28 8765 4321</p>
+          <p><i class="fas fa-calendar"></i> Available: Mon-Sun</p>
+          <button class="btn" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-calendar"></i>
+            Book Now
+          </button>
+        </div>
+        <div class="center-card">
+          <h4>Da Nang Center</h4>
+          <p><i class="fas fa-map-pin"></i> 789 Coastal Avenue, Da Nang</p>
+          <p><i class="fas fa-phone"></i> +84 236 555 8888</p>
+          <p><i class="fas fa-calendar"></i> Available: Tue-Sat</p>
+          <button class="btn" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-calendar"></i>
+            Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-graduation-cap"></i> Test Formats</h3>
+      <p>Choose the test format that best suits your needs:</p>
+      
+      <div class="cards" style="margin-top: 2rem;">
+        <div class="card">
+          <i class="fas fa-university"></i>
+          <h4>IELTS Academic</h4>
+          <p>For students applying for higher education or professional registration</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-briefcase"></i>
+          <h4>IELTS General Training</h4>
+          <p>For migration to English-speaking countries and work experience</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-passport"></i>
+          <h4>IELTS for UKVI</h4>
+          <p>For UK visa and immigration applications</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Organisations Section -->
+  <section class="page-section" id="organisationsPage">
+    <button class="back-home" id="backHomeFromOrganisations">
+      <i class="fas fa-arrow-left"></i>
+      Back to Home
+    </button>
+    
+    <div class="page-header">
+      <h2>For Organisations</h2>
+      <p>Partner with the world's leading English language test</p>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-handshake"></i> Why Recognise IELTS?</h3>
+      <p>IELTS is trusted by thousands of organisations worldwide for its reliability and accuracy in assessing English language proficiency.</p>
+      
+      <div class="cards" style="margin-top: 2rem;">
+        <div class="card">
+          <i class="fas fa-university"></i>
+          <h4>Educational Institutions</h4>
+          <p>Over 10,000 universities, colleges, and schools worldwide accept IELTS for admission purposes.</p>
+          <ul style="text-align: left; margin-top: 1rem; color: var(--gray);">
+            <li>Undergraduate and postgraduate admissions</li>
+            <li>Scholarship applications</li>
+            <li>Exchange programs</li>
+          </ul>
+        </div>
+        <div class="card">
+          <i class="fas fa-briefcase"></i>
+          <h4>Employers & Corporations</h4>
+          <p>Leading companies use IELTS for recruitment, promotion, and professional development.</p>
+          <ul style="text-align: left; margin-top: 1rem; color: var(--gray);">
+            <li>Recruitment screening</li>
+            <li>Professional certification</li>
+            <li>International assignments</li>
+          </ul>
+        </div>
+        <div class="card">
+          <i class="fas fa-passport"></i>
+          <h4>Government Agencies</h4>
+          <p>Immigration authorities in multiple countries trust IELTS for visa and citizenship applications.</p>
+          <ul style="text-align: left; margin-top: 1rem; color: var(--gray);">
+            <li>Permanent residency</li>
+            <li>Citizenship applications</li>
+            <li>Professional migration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-chart-bar"></i> Recognition Resources</h3>
+      <p>We provide comprehensive support for organisations including score comparison tools, research reports, and training workshops.</p>
+      
+      <div class="cards" style="margin-top: 2rem;">
+        <div class="card">
+          <i class="fas fa-tools"></i>
+          <h4>Score Comparison Tools</h4>
+          <p>Access our online tools to compare IELTS scores with other language tests</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-file-contract"></i>
+          <h4>Recognition Kit</h4>
+          <p>Complete set of materials to promote your recognition of IELTS</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-users"></i>
+          <h4>Training Workshops</h4>
+          <p>Specialized training for admission staff and HR professionals</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Researchers Section -->
+  <section class="page-section" id="researchersPage">
+    <button class="back-home" id="backHomeFromResearchers">
+      <i class="fas fa-arrow-left"></i>
+      Back to Home
+    </button>
+    
+    <div class="page-header">
+      <h2>For Researchers</h2>
+      <p>Advancing language assessment through rigorous research</p>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-search"></i> Research & Development</h3>
+      <p>IELTS invests heavily in research to ensure the test remains valid, reliable, and fair. Our research program covers various aspects of language assessment and testing methodology.</p>
+      
+      <div class="cards" style="margin-top: 2rem;">
+        <div class="card">
+          <i class="fas fa-chart-bar"></i>
+          <h4>Validation Studies</h4>
+          <p>Ongoing research to ensure test accuracy, fairness, and reliability across different test taker groups.</p>
+          <ul style="text-align: left; margin-top: 1rem; color: var(--gray);">
+            <li>Test fairness studies</li>
+            <li>Bias detection and elimination</li>
+            <li>Cross-cultural validation</li>
+          </ul>
+        </div>
+        <div class="card">
+          <i class="fas fa-graduation-cap"></i>
+          <h4>Academic Partnerships</h4>
+          <p>Collaboration with leading universities and research institutions worldwide to advance the field of language assessment.</p>
+          <ul style="text-align: left; margin-top: 1rem; color: var(--gray);">
+            <li>Cambridge University</li>
+            <li>British Council</li>
+            <li>IDP Education</li>
+          </ul>
+        </div>
+        <div class="card">
+          <i class="fas fa-paper-plane"></i>
+          <h4>Publications</h4>
+          <p>Access our research papers, studies, and academic publications in leading journals.</p>
+          <ul style="text-align: left; margin-top: 1rem; color: var(--gray);">
+            <li>IELTS Research Reports</li>
+            <li>Academic journal articles</li>
+            <li>Conference proceedings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-flask"></i> Research Areas</h3>
+      <p>Our research covers multiple domains to ensure comprehensive understanding and continuous improvement of language assessment.</p>
+      
+      <div class="cards" style="margin-top: 2rem;">
+        <div class="card">
+          <i class="fas fa-brain"></i>
+          <h4>Cognitive Processing</h4>
+          <p>Studies on how test takers process language during examination</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-laptop-code"></i>
+          <h4>Technology in Assessment</h4>
+          <p>Research on computer-delivered testing and automated scoring</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-globe"></i>
+          <h4>Cross-cultural Communication</h4>
+          <p>Studies on language use in global contexts and international settings</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section class="page-section" id="newsPage">
+    <button class="back-home" id="backHomeFromNews">
+      <i class="fas fa-arrow-left"></i>
+      Back to Home
+    </button>
+    
+    <div class="page-header">
+      <h2>News & Events</h2>
+      <p>Stay updated with the latest IELTS news and events</p>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-newspaper"></i> Latest News</h3>
+      
+      <div class="timeline">
+        <!-- News Item 1 -->
+        <div class="timeline-item">
+          <h4>New Test Centers Opening in 2024</h4>
+          <p><strong>January 15, 2024</strong> - IELTS announces the opening of 15 new test centers across Southeast Asia to meet growing demand. The new centers will offer both computer-delivered and paper-based tests with state-of-the-art facilities.</p>
+          <button class="btn read-more-btn" data-news="1" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-readme"></i>
+            Read More
+          </button>
+        </div>
+
+        <!-- News Item 2 -->
+        <div class="timeline-item">
+          <h4>Enhanced Security Measures Implemented</h4>
+          <p><strong>December 3, 2023</strong> - New biometric verification systems have been installed at all test centers worldwide to ensure the highest level of test security and integrity. The enhanced measures include facial recognition and digital fingerprinting.</p>
+          <button class="btn read-more-btn" data-news="2" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-readme"></i>
+            Read More
+          </button>
+        </div>
+
+        <!-- News Item 3 -->
+        <div class="timeline-item">
+          <h4>Research Symposium 2024 Announced</h4>
+          <p><strong>November 20, 2023</strong> - The annual IELTS Research Symposium will be held in London on March 15-16, 2024. Researchers from around the world will present latest findings in language assessment and testing methodology.</p>
+          <button class="btn read-more-btn" data-news="3" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-readme"></i>
+            Read More
+          </button>
+        </div>
+
+        <!-- News Item 4 -->
+        <div class="timeline-item">
+          <h4>Mobile App Update Released</h4>
+          <p><strong>October 5, 2023</strong> - The official IELTS mobile app has been updated with new practice materials and improved user interface. The app now includes AI-powered speaking practice and personalized study recommendations.</p>
+          <button class="btn read-more-btn" data-news="4" style="margin-top: 1rem; padding: 0.8rem 1.5rem;">
+            <i class="fas fa-readme"></i>
+            Read More
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Modals -->
+  <!-- Modal 1: New Test Centers -->
+  <div class="news-modal" id="newsModal1">
+    <div class="news-modal-content">
+      <button class="news-modal-close">&times;</button>
+      <div class="news-modal-header">
+        <h3>New Test Centers Opening in 2024</h3>
+        <div class="news-date">January 15, 2024</div>
+      </div>
+      <div class="news-modal-body">
+        <p>IELTS is proud to announce the expansion of our testing network with 15 new state-of-the-art test centers across Southeast Asia.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Enhanced Security -->
+  <div class="news-modal" id="newsModal2">
+    <div class="news-modal-content">
+      <button class="news-modal-close">&times;</button>
+      <div class="news-modal-header">
+        <h3>Enhanced Security Measures Implemented</h3>
+        <div class="news-date">December 3, 2023</div>
+      </div>
+      <div class="news-modal-body">
+        <p>IELTS has implemented comprehensive new security measures across all test centers worldwide.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Research Symposium -->
+  <div class="news-modal" id="newsModal3">
+    <div class="news-modal-content">
+      <button class="news-modal-close">&times;</button>
+      <div class="news-modal-header">
+        <h3>Research Symposium 2024 Announced</h3>
+        <div class="news-date">November 20, 2023</div>
+      </div>
+      <div class="news-modal-body">
+        <p>The annual IELTS Research Symposium 2024 will bring together leading researchers from around the world.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Mobile App Update -->
+  <div class="news-modal" id="newsModal4">
+    <div class="news-modal-content">
+      <button class="news-modal-close">&times;</button>
+      <div class="news-modal-header">
+        <h3>Mobile App Update Released</h3>
+        <div class="news-date">October 5, 2023</div>
+      </div>
+      <div class="news-modal-body">
+        <p>The official IELTS mobile app has been completely redesigned with new features and enhanced user experience.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Registration Section -->
+  <section class="page-section" id="registrationPage">
+    <button class="back-home" id="backHomeFromRegistration">
+      <i class="fas fa-arrow-left"></i>
+      Back to Home
+    </button>
+    
+    <div class="page-header">
+      <h2>Register for IELTS</h2>
+      <p>Start your journey to international opportunities</p>
+    </div>
+
+    <div class="registration-form">
+      <h3 style="text-align: center; margin-bottom: 2rem; color: var(--main-red);">
+        <i class="fas fa-user-plus"></i> Registration Form
+      </h3>
+      
+      <form id="ieltsRegistrationForm">
+        <div class="form-group">
+          <label for="fullName"><i class="fas fa-user"></i> Full Name</label>
+          <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+        </div>
+
+        <div class="form-group">
+          <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+          <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+          <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+        </div>
+
+        <div class="form-group">
+          <label for="country"><i class="fas fa-globe"></i> Country</label>
+          <select id="country" name="country" required>
+            <option value="">Select your country</option>
+            <option value="vietnam">Vietnam</option>
+            <option value="usa">United States</option>
+            <option value="uk">United Kingdom</option>
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="testType"><i class="fas fa-graduation-cap"></i> Test Type</label>
+          <select id="testType" name="testType" required>
+            <option value="">Select test type</option>
+            <option value="academic">IELTS Academic</option>
+            <option value="general">IELTS General Training</option>
+            <option value="ukvi">IELTS for UKVI</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="testFormat"><i class="fas fa-laptop"></i> Test Format</label>
+          <select id="testFormat" name="testFormat" required>
+            <option value="">Select test format</option>
+            <option value="computer">Computer-delivered</option>
+            <option value="paper">Paper-based</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="testDate"><i class="fas fa-calendar"></i> Preferred Test Date</label>
+          <input type="date" id="testDate" name="testDate" required>
+        </div>
+
+        <div class="form-group">
+          <label for="testCenter"><i class="fas fa-map-marker-alt"></i> Preferred Test Center</label>
+          <select id="testCenter" name="testCenter" required>
+            <option value="">Select test center</option>
+            <option value="hanoi">Hanoi Center</option>
+            <option value="hcmc">Ho Chi Minh Center</option>
+            <option value="danang">Da Nang Center</option>
+            <option value="other">Other Location</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="purpose"><i class="fas fa-bullseye"></i> Test Purpose</label>
+          <select id="purpose" name="purpose" required>
+            <option value="">Select purpose</option>
+            <option value="study">Study Abroad</option>
+            <option value="work">Work/Migration</option>
+            <option value="professional">Professional Registration</option>
+            <option value="personal">Personal Development</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message"><i class="fas fa-comment"></i> Additional Information</label>
+          <textarea id="message" name="message" rows="4" placeholder="Any additional requirements, special accommodations needed, or questions"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" required>
+            I agree to the <a href="#" style="color: var(--main-red);">terms and conditions</a> and privacy policy
+          </label>
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%; padding: 1.2rem;">
+          <i class="fas fa-paper-plane"></i>
+          Submit Registration
+        </button>
+      </form>
+    </div>
+
+    <div class="page-content">
+      <h3><i class="fas fa-question-circle"></i> Registration Process</h3>
+      <p>After submitting your registration, you will receive a confirmation email within 24 hours with further instructions and payment details.</p>
+      
+      <div class="cards" style="margin-top: 2rem;">
+        <div class="card">
+          <i class="fas fa-1"></i>
+          <h4>Submit Registration</h4>
+          <p>Complete the online registration form with your details and preferences</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-2"></i>
+          <h4>Receive Confirmation</h4>
+          <p>Get email confirmation with test details and payment instructions</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-3"></i>
+          <h4>Make Payment</h4>
+          <p>Complete payment through our secure online payment system</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-4"></i>
+          <h4>Get Test Details</h4>
+          <p>Receive final confirmation with exact test location and timing</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reading Practice Section - FIXED VERSION -->
+  <section class="page-section" id="readingPracticePage">
+    <button class="back-home" id="backHomeFromReading">
+      <i class="fas fa-arrow-left"></i>
+      Back to Home
+    </button>
+    
+    <div class="page-header">
+      <h2>Reading Practice</h2>
+      <p>Test your reading comprehension skills with authentic IELTS practice materials</p>
+    </div>
+
+    <!-- Timer -->
+    <div class="timer" id="timer">
+      <i class="fas fa-clock"></i> Time: <span id="time">60:00</span>
+    </div>
+
+    <div class="reading-container">
+      <!-- Reading Passage -->
+      <div class="reading-passage">
+        <h2 class="passage-title">READING PASSAGE - Medical Knowledge</h2>
+        
+        <div class="paragraph">
+          <span class="paragraph-label">A.</span> What counts as knowledge? What do we mean when we say that we know something? What is the status of different kinds of knowledge? In order to explore these questions we are going to focus on one particular area of knowledge - medicine.
+        </div>
+
+        <div class="paragraph">
+          <span class="paragraph-label">B.</span> How do you know when you are ill? This may seem to be an absurd question. You know you are ill because you feel ill; your body tells you that you are ill. You may know that you feel pain or discomfort but knowing you are ill is a bit more complex. At times, people experience the symptoms of illness, but in fact they are simply tired or over-worked or they may just have a hangover. At other times, people may be suffering from a disease and fail to be aware of the illness until it has reached a late stage in its development. So how do we know we are ill, and what counts as knowledge?
+        </div>
+
+        <div class="paragraph">
+          <span class="paragraph-label">C.</span> Think about this example. You feel unwell. You have a bad cough and always seem to be tired. Perhaps it could be stress at work, or maybe you should give up smoking. You feel worse. You visit the doctor who listens to your chest and heart, takes your temperature and blood pressure, and then finally prescribes antibiotics for your cough.
+        </div>
+
+        <div class="paragraph">
+          <span class="paragraph-label">D.</span> Things do not improve but you struggle on thinking you should pull yourself together, perhaps things will ease off at work soon. A return visit to your doctor shocks you. This time the doctor, drawing on years of training and experience, diagnoses pneumonia. This means that you will need bed rest and a considerable time off work. The scenario is transformed. Although you still have the same symptoms, you no longer think that these are caused by pressure at work. You now have proof that you are ill. This is the result of the combination of your own subjective experience and the diagnoses of someone who has the status of a medical expert. You have a medically authenticated diagnosis and it appears that you are seriously ill; you know you are ill and have evidence upon which to base this knowledge.
+        </div>
+
+        <div class="paragraph">
+          <span class="paragraph-label">E.</span> This scenario shows many different sources of knowledge. For example, you decide to consult the doctor in the first place because you feel unwell - this is personal knowledge about your own body. However, the doctor's expert diagnosis is based on experience and training, with sources of knowledge as diverse as other experts, laboratory reports, medical textbooks and years of experience.
+        </div>
+
+        <div class="paragraph">
+          <span class="paragraph-label">F.</span> One source of knowledge is the experience of our own bodies; the personal knowledge we have of changes that might be significant, as well as the subjective experience of pain and physical stress. These experiences are mediated by other forms of knowledge such as the words we have available to describe our experience and the common sense of our families and friends as well as that drawn from popular culture. Over the past decade, for example, Western culture has seen a significant emphasis on stress-related illness in the media. Reference to being 'stressed out' has become a common response in daily exchanges in the workplace and has become part of popular common-sense knowledge. It is thus not surprising that we might seek such an explanation of physical symptoms of discomfort.
+        </div>
+
+        <div class="paragraph">
+          <span class="paragraph-label">G.</span> We might also rely on the observations of others who know us. Comments from friends and family such as 'you do look ill' or 'that's a bad cough' might be another source of knowledge. Complementary health practices, such as holistic medicine, produce their own sets of knowledge upon which we might also draw in deciding the nature and degree of our ill health and seek possible treatments.
+        </div>
+
+        <div class="paragraph">
+          <span class="paragraph-label">H.</span> Perhaps the most influential and authoritative source of knowledge is the medical knowledge provided by the general practitioner. We expect the doctor to have access to expert knowledge. This is socially sanctioned. It would not be acceptable to notify our employer that we simply felt too unwell to turn up to work or to consult a faith healer, astrologer, therapist or even our priest though it was not a good idea. We need an expert medical diagnosis in order to obtain the necessary certificate if we need to be off work for more than the statutory self-certification period. The knowledge of the medical science is privileged in this respect in contemporary Western culture. Medical practitioners are also seen as having the requisite expert knowledge that permits them legally to prescribe drugs and treatment to which patients would not otherwise have access. However there is a range of different knowledge upon which we draw when making decisions about our own state of health.
+        </div>
+
+        <div class="paragraph">
+          <span class="paragraph-label">I.</span> However, there is more than existing knowledge in this little story: new knowledge is constructed within it. Given the doctor's medical training and background, she may hypothesize 'is this now pneumonia?' And then proceed to look for evidence about how you will use observations and instruments to assess the evidence and critically interpret it in the light of her training and experience. This results in new knowledge and new experience both for you and for the doctor. This will then be added to the doctor's medical knowledge and may help in future diagnosis of pneumonia.
+        </div>
+      </div>
+
+      <!-- Questions Section -->
+      <div class="questions-section">
+        <div class="instructions">
+          <h4><i class="fas fa-info-circle"></i> Instructions</h4>
+          <p>Complete the questions below. Write your answers in the boxes provided.</p>
+          <p><strong>Time:</strong> 60 minutes</p>
+          <p><strong>Questions:</strong> 1-14</p>
+        </div>
+
+        <h3 class="section-title">Questions 1-6</h3>
+        <div class="question-group">
+          <h4>Complete the table. Choose <strong>NO MORE THAN THREE WORDS</strong> from the passage for each answer.</h4>
+          
+          <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+            <tr style="background: var(--light-gray);">
+              <th style="padding: 1rem; text-align: left; border: 1px solid var(--border-color);">Source of knowledge</th>
+              <th style="padding: 1rem; text-align: left; border: 1px solid var(--border-color);">Example</th>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; border: 1px solid var(--border-color);">Personal experience</td>
+              <td style="padding: 1rem; border: 1px solid var(--border-color);">
+                Symptoms of a <input type="text" class="answer-input" placeholder="1" data-correct="bad cough"> and tiredness
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; border: 1px solid var(--border-color);">Medical examination</td>
+              <td style="padding: 1rem; border: 1px solid var(--border-color);">
+                Doctor's measurement of <input type="text" class="answer-input" placeholder="2" data-correct="blood pressure"> and temperature
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; border: 1px solid var(--border-color);">Common judgment</td>
+              <td style="padding: 1rem; border: 1px solid var(--border-color);">
+                From <input type="text" class="answer-input" placeholder="3" data-correct="families and friends"> around you
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; border: 1px solid var(--border-color);">Scientific Evidence</td>
+              <td style="padding: 1rem; border: 1px solid var(--border-color);">
+                Medical knowledge from the general <input type="text" class="answer-input" placeholder="4" data-correct="practitioner">
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; border: 1px solid var(--border-color);">Professional training</td>
+              <td style="padding: 1rem; border: 1px solid var(--border-color);">
+                E.g. Doctor's medical <input type="text" class="answer-input" placeholder="5" data-correct="training and background">
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; border: 1px solid var(--border-color);">Clinical experience</td>
+              <td style="padding: 1rem; border: 1px solid var(--border-color);">
+                Examine the medical hypothesis with the previous <input type="text" class="answer-input" placeholder="6" data-correct="drill and experience">
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <h3 class="section-title">Questions 7-14</h3>
+        <div class="question-group">
+          <h4>The reading passage has nine paragraphs A-I. Which paragraph contains the following information?</h4>
+          <p><em>Write the correct letter A-I in boxes 7-14 on your answer sheet.</em></p>
+          <p><strong>NB:</strong> You may use any letter more than once.</p>
+          
+          <div style="margin-top: 1rem;">
+            <p>7. The contrast between the nature of personal judgment and the nature of doctor</p>
+            <input type="text" class="answer-input" placeholder="7" data-correct="E" maxlength="1">
+            
+            <p>8. The reference of culture about pressure</p>
+            <input type="text" class="answer-input" placeholder="8" data-correct="F" maxlength="1">
+            
+            <p>9. Sick leave will be not permitted if employees are without the professional diagnosis</p>
+            <input type="text" class="answer-input" placeholder="9" data-correct="H" maxlength="1">
+            
+            <p>10. How doctors are regarded in the society</p>
+            <input type="text" class="answer-input" placeholder="10" data-correct="H" maxlength="1">
+            
+            <p>11. The symptom of the patients can be added as new information</p>
+            <input type="text" class="answer-input" placeholder="11" data-correct="I" maxlength="1">
+            
+            <p>12. What the situation will be if we come across knowledge from non-specialized outer sources</p>
+            <input type="text" class="answer-input" placeholder="12" data-correct="G" maxlength="1">
+            
+            <p>13. An example of collective judgment from personal experience and professional doctor</p>
+            <input type="text" class="answer-input" placeholder="13" data-correct="D" maxlength="1">
+            
+            <p>14. A reference about those people who do not realize their illness</p>
+            <input type="text" class="answer-input" placeholder="14" data-correct="B" maxlength="1">
+          </div>
+        </div>
+
+        <button class="submit-btn" id="submitTest">
+          <i class="fas fa-paper-plane"></i>
+          Submit Answers
+        </button>
+      </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div class="result-modal" id="resultModal">
+      <div class="result-content">
+        <h2 style="text-align: center; color: var(--main-red); margin-bottom: 1rem;">
+          <i class="fas fa-chart-line"></i> Test Results
+        </h2>
+        
+        <div class="result-score" id="finalScore">0/14</div>
+        
+        <div class="result-details" id="resultDetails">
+          <!-- Results will be populated here -->
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+          <button class="submit-btn" id="closeResult" style="background: var(--gray);">
+            <i class="fas fa-times"></i>
+            Close Results
+          </button>
+          <button class="submit-btn" id="retryTest" style="background: var(--info); margin-left: 1rem;">
+            <i class="fas fa-redo"></i>
+            Try Again
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="ielts_reading.js"></script>
+</body>
+</html>
