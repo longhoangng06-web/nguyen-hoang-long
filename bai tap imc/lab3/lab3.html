@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3 - JavaScript Animation & Interaction</title>
+    <link rel="stylesheet" href="assets/css/lab3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-code"></i> Lab 3: JavaScript Animation & Interaction</h1>
+        <p class="subtitle">Thực hành hiệu ứng và tương tác với JavaScript</p>
+    </header>
+
+    <main>
+        <!-- Bài 1: Nút đổi nền -->
+        <section id="bai1" class="lab-section">
+            <h2><i class="fas fa-palette"></i> Bài 1: Nút đổi nền trang</h2>
+            <p class="description">Nhấn nút để chuyển đổi giữa chế độ sáng/tối cho toàn bộ trang.</p>
+            <button id="toggleTheme" class="btn">
+                <i class="fas fa-moon"></i> Đổi nền
+            </button>
+            <div class="example-area">
+                <p>Nội dung mẫu để thấy rõ sự thay đổi màu nền và chữ.</p>
+            </div>
+        </section>
+
+        <!-- Bài 2: Menu highlight khi cuộn -->
+        <section id="bai2" class="lab-section">
+            <h2><i class="fas fa-bars"></i> Bài 2: Menu highlight khi cuộn trang</h2>
+            <p class="description">Menu sẽ highlight mục tương ứng với section đang hiển thị.</p>
+            
+            <nav class="scroll-menu">
+                <ul>
+                    <li><a href="#bai1" class="menu-link">Bài 1</a></li>
+                    <li><a href="#bai2" class="menu-link">Bài 2</a></li>
+                    <li><a href="#bai3" class="menu-link">Bài 3</a></li>
+                    <li><a href="#bai4" class="menu-link">Bài 4</a></li>
+                    <li><a href="#bai5" class="menu-link">Bài 5</a></li>
+                </ul>
+            </nav>
+            
+            <div class="content-section">
+                <p>Cuộn xuống để thấy menu thay đổi trạng thái active.</p>
+                <div class="dummy-height" style="height: 500px;">
+                    <p>Khu vực cuộn giả - cuộn xuống để xem highlight menu.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bài 3: Hiệu ứng xuất hiện khi cuộn -->
+        <section id="bai3" class="lab-section">
+            <h2><i class="fas fa-box-open"></i> Bài 3: Hiệu ứng xuất hiện khi cuộn</h2>
+            <p class="description">Các box sẽ dần xuất hiện khi cuộn đến vùng nhìn thấy.</p>
+            
+            <div class="scroll-box-container">
+                <div class="box">Box 1 - Nội dung thú vị</div>
+                <div class="box">Box 2 - Thông tin hấp dẫn</div>
+                <div class="box">Box 3 - Dữ liệu quan trọng</div>
+            </div>
+            
+            <div class="dummy-height" style="height: 300px;">
+                <p>Khu vực trống để có thể cuộn xuống xem hiệu ứng.</p>
+            </div>
+        </section>
+
+        <!-- Bài 4: Nút nhảy khi hover -->
+        <section id="bai4" class="lab-section">
+            <h2><i class="fas fa-hand-point-up"></i> Bài 4: Nút "nhảy lên" khi hover</h2>
+            <p class="description">Di chuột vào nút để xem hiệu ứng nhảy.</p>
+            
+            <button id="jumpBtn" class="jump-btn">
+                <i class="fas fa-arrow-up"></i> Hover để nhảy!
+            </button>
+            
+            <p class="hint">Di chuột vào nút trên để xem hiệu ứng</p>
+        </section>
+
+        <!-- Bài 5: Hình tròn di chuyển theo chuột -->
+        <section id="bai5" class="lab-section">
+            <h2><i class="fas fa-mouse-pointer"></i> Bài 5: Hình tròn di chuyển theo chuột</h2>
+            <p class="description">Di chuyển chuột để hình tròn đỏ di theo.</p>
+            
+            <div class="mouse-area">
+                <p>Di chuyển chuột trong khu vực này:</p>
+                <div class="circle"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>WE-MĐ06 - Thiết kế Website Động (Animation) - Lab 3</p>
+        <p class="student-info">Họ tên: [Your Name] | MSSV: [Your ID] | Lớp: [Your Class]</p>
+    </footer>
+
+    <!-- Liên kết JavaScript ở cuối body -->
+    <script src="assets/js/lab3.js"></script>
+</body>
+</html>

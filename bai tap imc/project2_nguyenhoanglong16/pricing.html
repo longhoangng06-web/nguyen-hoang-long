@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng giá - TechHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header (giống index.html) -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>TechHub</span>
+                </a>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Trang chủ</a>
+                    <a href="features.html" class="nav-link">Tính năng</a>
+                    <a href="pricing.html" class="nav-link">Bảng giá</a>
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+                    <a href="contact.html" class="nav-link">Liên hệ</a>
+                </div>
+                
+                <div class="nav-buttons">
+                    <a href="#pricing-table" class="btn btn-outline">Dùng thử</a>
+                    <a href="contact.html" class="btn btn-primary">Đăng ký</a>
+                </div>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Pricing Hero -->
+    <section class="page-hero pricing-hero">
+        <div class="container">
+            <h1 class="page-title" data-aos="fade-up">Bảng giá linh hoạt</h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Chọn gói dịch vụ phù hợp với nhu cầu và ngân sách của startup bạn
+            </p>
+            
+            <div class="pricing-toggle" data-aos="fade-up" data-aos-delay="200">
+                <span class="toggle-label">Thanh toán hàng tháng</span>
+                <div class="toggle-switch" id="pricingToggle">
+                    <div class="toggle-slider"></div>
+                </div>
+                <span class="toggle-label active">Thanh toán hàng năm</span>
+                <span class="toggle-badge">Tiết kiệm 20%</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Table -->
+    <section class="pricing-section" id="pricing-table">
+        <div class="container">
+            <div class="pricing-grid">
+                <!-- Basic Plan -->
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Startup</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount monthly">499,000đ</span>
+                            <span class="price-amount yearly">399,000đ</span>
+                            <span class="price-period">/tháng</span>
+                        </div>
+                        <p class="pricing-description">Phù hợp cho startup mới thành lập</p>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Tối đa 5 người dùng</li>
+                        <li><i class="fas fa-check"></i> 10GB dung lượng lưu trữ</li>
+                        <li><i class="fas fa-check"></i> Tính năng AI cơ bản</li>
+                        <li><i class="fas fa-check"></i> Báo cáo cơ bản</li>
+                        <li><i class="fas fa-check"></i> Hỗ trợ qua email</li>
+                        <li><i class="fas fa-times"></i> <del>Phân tích nâng cao</del></li>
+                        <li><i class="fas fa-times"></i> <del>Tích hợp API không giới hạn</del></li>
+                    </ul>
+                    
+                    <a href="contact.html?plan=startup" class="btn btn-outline btn-block">Chọn gói</a>
+                </div>
+                
+                <!-- Pro Plan (Recommended) -->
+                <div class="pricing-card featured" data-aos="fade-up">
+                    <div class="pricing-badge">Phổ biến nhất</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Doanh nghiệp</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount monthly">1,299,000đ</span>
+                            <span class="price-amount yearly">999,000đ</span>
+                            <span class="price-period">/tháng</span>
+                        </div>
+                        <p class="pricing-description">Hoàn hảo cho doanh nghiệp đang phát triển</p>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Tối đa 20 người dùng</li>
+                        <li><i class="fas fa-check"></i> 100GB dung lượng lưu trữ</li>
+                        <li><i class="fas fa-check"></i> Tính năng AI đầy đủ</li>
+                        <li><i class="fas fa-check"></i> Báo cáo nâng cao</li>
+                        <li><i class="fas fa-check"></i> Hỗ trợ 24/7</li>
+                        <li><i class="fas fa-check"></i> Phân tích nâng cao</li>
+                        <li><i class="fas fa-check"></i> Tích hợp 10 API</li>
+                    </ul>
+                    
+                    <a href="contact.html?plan=business" class="btn btn-primary btn-block">Chọn gói</a>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Enterprise</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount">Liên hệ</span>
+                        </div>
+                        <p class="pricing-description">Giải pháp tùy chỉnh cho doanh nghiệp lớn</p>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Người dùng không giới hạn</li>
+                        <li><i class="fas fa-check"></i> Dung lượng lưu trữ không giới hạn</li>
+                        <li><i class="fas fa-check"></i> Tính năng AI tùy chỉnh</li>
+                        <li><i class="fas fa-check"></i> Báo cáo tùy chỉnh</li>
+                        <li><i class="fas fa-check"></i> Hỗ trợ chuyên gia riêng</li>
+                        <li><i class="fas fa-check"></i> Phân tích chuyên sâu</li>
+                        <li><i class="fas fa-check"></i> Tích hợp API không giới hạn</li>
+                    </ul>
+                    
+                    <a href="contact.html?plan=enterprise" class="btn btn-outline btn-block">Liên hệ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section" data-aos="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">So sánh chi tiết</h2>
+                <p class="section-subtitle">Xem điểm khác biệt giữa các gói dịch vụ</p>
+            </div>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tính năng</th>
+                            <th>Startup</th>
+                            <th>Doanh nghiệp</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Số người dùng</td>
+                            <td>5 người</td>
+                            <td>20 người</td>
+                            <td>Không giới hạn</td>
+                        </tr>
+                        <tr>
+                            <td>Dung lượng lưu trữ</td>
+                            <td>10GB</td>
+                            <td>100GB</td>
+                            <td>Không giới hạn</td>
+                        </tr>
+                        <tr>
+                            <td>Hỗ trợ khách hàng</td>
+                            <td>Email (24h)</td>
+                            <td>24/7 (chat, email, phone)</td>
+                            <td>Chuyên gia riêng</td>
+                        </tr>
+                        <tr>
+                            <td>Tích hợp API</td>
+                            <td>3 API</td>
+                            <td>10 API</td>
+                            <td>Không giới hạn</td>
+                        </tr>
+                        <tr>
+                            <td>Bảo mật nâng cao</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Sao lưu tự động</td>
+                            <td>Hàng tuần</td>
+                            <td>Hàng ngày</td>
+                            <td>Thời gian thực</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (giống features.html) -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Câu hỏi về giá</h2>
+                <p class="section-subtitle">Giải đáp thắc mắc thường gặp</p>
+            </div>
+            
+            <div class="faq-container">
+                <!-- FAQ items giống features.html -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" data-aos="fade-up">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Chưa chắc chắn về gói phù hợp?</h2>
+                <p class="cta-subtitle">Đội ngũ tư vấn của chúng tôi sẽ giúp bạn chọn gói tốt nhất</p>
+                
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Nhận tư vấn miễn phí</a>
+                    <a href="features.html" class="btn btn-outline">Xem tính năng chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (giống index.html) -->
+    <footer class="footer">
+        <!-- Nội dung footer giống index.html -->
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

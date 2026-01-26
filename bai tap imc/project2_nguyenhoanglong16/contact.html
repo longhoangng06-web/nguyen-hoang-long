@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - TechHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header (giống index.html) -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>TechHub</span>
+                </a>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Trang chủ</a>
+                    <a href="features.html" class="nav-link">Tính năng</a>
+                    <a href="pricing.html" class="nav-link">Bảng giá</a>
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+                    <a href="contact.html" class="nav-link">Liên hệ</a>
+                </div>
+                
+                <div class="nav-buttons">
+                    <a href="pricing.html" class="btn btn-outline">Dùng thử</a>
+                    <a href="#contact-form" class="btn btn-primary">Đăng ký</a>
+                </div>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="page-hero contact-hero">
+        <div class="container">
+            <h1 class="page-title" data-aos="fade-up">Liên hệ với chúng tôi</h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Chúng tôi luôn sẵn sàng hỗ trợ và giải đáp mọi thắc mắc của bạn
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container" data-aos="fade-right">
+                    <h2 class="contact-form-title">Gửi tin nhắn cho chúng tôi</h2>
+                    <p class="contact-form-subtitle">Điền thông tin bên dưới, chúng tôi sẽ liên hệ lại trong 24h</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group floating">
+                                <input type="text" id="firstName" class="form-input" placeholder=" " required>
+                                <label for="firstName" class="form-label">Họ và tên đệm</label>
+                                <div class="form-error" id="firstNameError"></div>
+                            </div>
+                            
+                            <div class="form-group floating">
+                                <input type="text" id="lastName" class="form-input" placeholder=" " required>
+                                <label for="lastName" class="form-label">Tên</label>
+                                <div class="form-error" id="lastNameError"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group floating">
+                            <input type="email" id="contactEmail" class="form-input" placeholder=" " required>
+                            <label for="contactEmail" class="form-label">Email công việc</label>
+                            <div class="form-error" id="contactEmailError"></div>
+                        </div>
+                        
+                        <div class="form-group floating">
+                            <input type="text" id="company" class="form-input" placeholder=" ">
+                            <label for="company" class="form-label">Tên công ty (tùy chọn)</label>
+                        </div>
+                        
+                        <div class="form-group floating">
+                            <select id="plan" class="form-input" required>
+                                <option value="" disabled selected></option>
+                                <option value="startup">Gói Startup</option>
+                                <option value="business">Gói Doanh nghiệp</option>
+                                <option value="enterprise">Gói Enterprise</option>
+                                <option value="consulting">Cần tư vấn</option>
+                            </select>
+                            <label for="plan" class="form-label">Gói quan tâm</label>
+                            <div class="form-error" id="planError"></div>
+                        </div>
+                        
+                        <div class="form-group floating">
+                            <textarea id="message" class="form-input textarea" placeholder=" " rows="4" required></textarea>
+                            <label for="message" class="form-label">Nội dung tin nhắn</label>
+                            <div class="form-error" id="messageError"></div>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <label for="agreeTerms">
+                                Tôi đồng ý với <a href="#">Điều khoản dịch vụ</a> và <a href="#">Chính sách bảo mật</a>
+                            </label>
+                            <div class="form-error" id="termsError"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span class="btn-text">Gửi tin nhắn</span>
+                            <div class="btn-loading">
+                                <div class="spinner"></div>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="contact-info" data-aos="fade-left">
+                    <h2 class="contact-info-title">Thông tin liên hệ</h2>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Địa chỉ văn phòng</h3>
+                            <p>Tầng 10, Tòa nhà TechHub, 123 Đường Lê Lợi, Quận 1, TP. Hồ Chí Minh</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Số điện thoại</h3>
+                            <p>(028) 1234 5678</p>
+                            <p>Hotline: 0900 123 456 (24/7)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>support@techhub.vn</p>
+                            <p>sales@techhub.vn</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Giờ làm việc</h3>
+                            <p>Thứ 2 - Thứ 6: 8:00 - 18:00</p>
+                            <p>Thứ 7: 8:00 - 12:00</p>
+                            <p>Chủ nhật: Nghỉ</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h3>Theo dõi chúng tôi</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="map-title">Tìm đường đến TechHub</h2>
+            <div class="map-container">
+                <!-- Đây là map placeholder, thực tế sẽ dùng Google Maps API -->
+                <div class="map-placeholder">
+                    <div class="map-marker">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="map-overlay">
+                        <h3>Văn phòng TechHub</h3>
+                        <p>Tầng 10, Tòa nhà TechHub, Quận 1, TP.HCM</p>
+                        <a href="https://maps.google.com/?q=10.7769,106.7009" target="_blank" class="btn btn-outline btn-sm">
+                            <i class="fas fa-directions"></i> Chỉ đường
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (giống features.html) -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Hỏi đáp nhanh</h2>
+                <p class="section-subtitle">Câu hỏi thường gặp về liên hệ và hỗ trợ</p>
+            </div>
+            
+            <div class="faq-container">
+                <!-- FAQ items giống features.html -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (giống index.html) -->
+    <footer class="footer">
+        <!-- Nội dung footer giống index.html -->
+    </footer>
+
+    <!-- Toast Notification (giống index.html) -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span class="toast-message" id="toastMessage">Tin nhắn đã được gửi thành công!</span>
+        </div>
+        <button class="toast-close" id="toastClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
