@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BadmintonPro - Chuyên nghiệp hơn VNB</title>
+    <style>
+        /* ===== VARIABLES - MODERN DARK THEME ===== */
+        :root {
+            /* Màu chủ đạo - Tím than và xanh neon */
+            --primary: #6c5ce7;
+            --primary-light: #a29bfe;
+            --primary-dark: #5649c0;
+            --secondary: #00cec9;
+            --secondary-light: #55efc4;
+            --accent: #fd79a8;
+            --accent-light: #ff9ff3;
+            
+            /* Màu nền tối */
+            --bg-dark-1: #0f0f1a;
+            --bg-dark-2: #1a1a2e;
+            --bg-dark-3: #16213e;
+            --bg-card: #1e1e30;
+            --bg-card-hover: #2a2a40;
+            
+            /* Màu chữ */
+            --text-primary: #ffffff;
+            --text-secondary: #b8b8d0;
+            --text-muted: #6c6c8a;
+            --text-dark: #0f0f1a;
+            
+            /* Màu chức năng */
+            --success: #00b894;
+            --warning: #fdcb6e;
+            --danger: #d63031;
+            --info: #74b9ff;
+            
+            /* Hiệu ứng */
+            --glow-primary: 0 0 20px rgba(108, 92, 231, 0.5);
+            --glow-secondary: 0 0 20px rgba(0, 206, 201, 0.5);
+            --glow-accent: 0 0 20px rgba(253, 121, 168, 0.5);
+            
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+            --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+            
+            --border-glow: 1px solid rgba(108, 92, 231, 0.2);
+            --border-glow-hover: 1px solid rgba(108, 92, 231, 0.5);
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark-1);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng nền động */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(108, 92, 231, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 206, 201, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(253, 121, 168, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: rgba(15, 15, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: var(--border-glow);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .logo {
+            position: relative;
+        }
+
+        .logo h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0;
+            animation: gradientFlow 5s ease infinite;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .logo p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            transition: var(--transition);
+            position: relative;
+            border: var(--border-glow);
+            background: rgba(108, 92, 231, 0.05);
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 30px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        nav a:hover::before {
+            opacity: 1;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+            background: rgba(108, 92, 231, 0.1);
+            transform: translateY(-2px);
+            box-shadow: var(--glow-primary);
+        }
+
+        .cart-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: relative;
+            padding: 0.8rem;
+            border-radius: 50%;
+            background: rgba(108, 92, 231, 0.1);
+            border: var(--border-glow);
+            transition: var(--transition);
+        }
+
+        .cart-icon:hover {
+            background: rgba(108, 92, 231, 0.2);
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: var(--glow-primary);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            color: var(--text-primary);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            box-shadow: var(--glow-accent);
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 5px var(--accent); }
+            50% { box-shadow: 0 0 20px var(--accent); }
+            100% { box-shadow: 0 0 5px var(--accent); }
+        }
+
+        /* ===== MAIN LAYOUT ===== */
+        .container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow-xl), var(--border-glow);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+            border: var(--border-glow);
+        }
+
+        .filter-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .filter-section h3 {
+            color: var(--text-primary);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, var(--primary), var(--secondary)) 1;
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .brand-filter label {
+            display: block;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            background: var(--bg-dark-2);
+            border: var(--border-glow);
+            color: var(--text-secondary);
+        }
+
+        .brand-filter label:hover {
+            background: var(--bg-card-hover);
+            transform: translateX(8px);
+            box-shadow: var(--glow-primary);
+            color: var(--text-primary);
+        }
+
+        .brand-filter input[type="checkbox"] {
+            margin-right: 1rem;
+            accent-color: var(--primary);
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 5px var(--primary));
+        }
+
+        .price-filter {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .price-filter input {
+            padding: 1rem;
+            background: var(--bg-dark-2);
+            border: var(--border-glow);
+            border-radius: 15px;
+            font-size: 1rem;
+            transition: var(--transition);
+            color: var(--text-primary);
+        }
+
+        .price-filter input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: var(--glow-primary);
+            transform: scale(1.02);
+        }
+
+        .apply-filter {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--text-primary);
+            border: none;
+            padding: 1.2rem;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .apply-filter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .apply-filter:hover::before {
+            left: 100%;
+        }
+
+        .apply-filter:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--glow-primary);
+        }
+
+        /* ===== PRODUCTS SECTION ===== */
+        .products-section {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow-xl);
+            border: var(--border-glow);
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            background: linear-gradient(135deg, var(--bg-dark-3) 0%, var(--bg-dark-2) 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: var(--border-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .admin-panel::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(108, 92, 231, 0.1) 50%,
+                transparent 70%
+            );
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .admin-panel h3 {
+            color: var(--text-primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .add-product-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .add-product-form input,
+        .add-product-form select,
+        .add-product-form textarea {
+            padding: 1rem;
+            background: var(--bg-dark-2);
+            border: var(--border-glow);
+            border-radius: 12px;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            color: var(--text-primary);
+        }
+
+        .add-product-form input:focus,
+        .add-product-form select:focus,
+        .add-product-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: var(--glow-primary);
+            transform: scale(1.02);
+        }
+
+        .btn-add {
+            background: linear-gradient(135deg, var(--success) 0%, var(--secondary) 100%);
+            color: var(--text-primary);
+            border: none;
+            padding: 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .btn-add:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px var(--success);
+        }
+
+        /* Products Grid */
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::before,
+        .section-title::after {
+            content: '🏸';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            opacity: 0.5;
+        }
+
+        .section-title::before {
+            left: -50px;
+        }
+
+        .section-title::after {
+            right: -50px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: var(--bg-dark-2);
+            border-radius: 25px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: var(--border-glow);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--glow-primary);
+            border-color: var(--primary);
+        }
+
+        .product-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(108, 92, 231, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            transition: transform 0.5s;
+            pointer-events: none;
+        }
+
+        .product-card:hover::after {
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+
+        .product-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--bg-dark-3) 0%, var(--bg-dark-1) 100%);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                transparent 0%,
+                rgba(108, 92, 231, 0.3) 50%,
+                transparent 100%
+            );
+            transform: translateX(-100%);
+            transition: transform 0.5s;
+            z-index: 1;
+        }
+
+        .product-card:hover .product-image::before {
+            transform: translateX(100%);
+        }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-brand {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 0.4rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            box-shadow: var(--glow-primary);
+        }
+
+        .product-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .product-specs {
+            background: var(--bg-dark-3);
+            padding: 1.2rem;
+            border-radius: 15px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .product-price {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .product-price::before {
+            content: '₫';
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .product-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-top: var(--border-glow);
+            border-bottom: var(--border-glow);
+            margin-bottom: 1.5rem;
+        }
+
+        .rating {
+            color: var(--warning);
+            font-weight: 600;
+            background: rgba(253, 203, 110, 0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+        }
+
+        .purchases {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .product-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+        }
+
+        .btn-buy {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--text-primary);
+            border: none;
+            padding: 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-buy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-buy:hover::before {
+            left: 100%;
+        }
+
+        .btn-buy:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--glow-primary);
+        }
+
+        .btn-review {
+            background: linear-gradient(135deg, var(--bg-dark-3) 0%, var(--bg-dark-1) 100%);
+            color: var(--text-secondary);
+            border: var(--border-glow);
+            padding: 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        .btn-review:hover {
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Player Info Section */
+        .player-info {
+            margin-top: 4rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--bg-dark-3) 0%, var(--bg-dark-2) 100%);
+            border-radius: 30px;
+            border: var(--border-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .player-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, var(--primary) 0%, transparent 30%),
+                radial-gradient(circle at 70% 70%, var(--secondary) 0%, transparent 30%);
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .player-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .player-card {
+            background: var(--bg-dark-2);
+            border-radius: 25px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            border: var(--border-glow);
+            backdrop-filter: blur(10px);
+        }
+
+        .player-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--glow-primary);
+            border-color: var(--primary);
+        }
+
+        .player-card img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid;
+            border-image: linear-gradient(135deg, var(--primary), var(--secondary)) 1;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+            box-shadow: var(--glow-primary);
+        }
+
+        .player-card:hover img {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .badminton-history {
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: var(--bg-dark-2);
+            border-radius: 20px;
+            border-left: 5px solid var(--primary);
+            position: relative;
+            z-index: 1;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            z-index: 2000;
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            width: 90%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 2.5rem;
+            border-radius: 30px;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: slideUp 0.5s;
+            border: var(--border-glow);
+            box-shadow: var(--shadow-xl), var(--glow-primary);
+        }
+
+        .invoice {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--bg-dark-2);
+            border-radius: 20px;
+            border: var(--border-glow);
+        }
+
+        .invoice-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: var(--border-glow);
+            color: var(--text-secondary);
+        }
+
+        .invoice-total {
+            font-weight: 800;
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            border-top: 2px solid var(--primary);
+        }
+
+        .review-item {
+            border-bottom: var(--border-glow);
+            padding: 1.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        .review-rating {
+            color: var(--warning);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark-2);
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 3rem;
+            margin-top: 4rem;
+            border-top: var(--border-glow);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), var(--accent), transparent);
+        }
+
+        /* Custom Scrollbar cho Dark Theme */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark-1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 6px;
+            border: 2px solid var(--bg-dark-1);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+            box-shadow: var(--glow-primary);
+        }
+
+        /* Loading Animation */
+        .loading {
+            width: 60px;
+            height: 60px;
+            border: 4px solid var(--bg-dark-2);
+            border-top-color: var(--primary);
+            border-right-color: var(--secondary);
+            border-bottom-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            box-shadow: var(--glow-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .section-title::before,
+            .section-title::after {
+                display: none;
+            }
+        }
+
+        /* Image Upload Preview */
+        .image-preview {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            margin-top: 0.5rem;
+            object-fit: cover;
+            border: var(--border-glow);
+            display: none;
+        }
+
+        .image-preview.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>BadmintonPro</h1>
+            <p>Chuyên nghiệp hơn cả VNB</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Vợt cầu lông</a></li>
+                <li><a href="#">Giày</a></li>
+                <li><a href="#">Phụ kiện</a></li>
+                <li><a href="#">Vận động viên</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" onclick="showCart()">
+            🛒
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar Filters -->
+        <div class="sidebar">
+            <div class="filter-section">
+                <h3>Danh mục theo hãng</h3>
+                <div class="brand-filter" id="brandFilter">
+                    <label><input type="checkbox" value="Yonex" checked> Yonex</label>
+                    <label><input type="checkbox" value="Li-Ning" checked> Li-Ning</label>
+                    <label><input type="checkbox" value="Victor" checked> Victor</label>
+                    <label><input type="checkbox" value="Lining" checked> Lining</label>
+                    <label><input type="checkbox" value="Mizuno" checked> Mizuno</label>
+                </div>
+            </div>
+            <div class="filter-section">
+                <h3>Lọc theo giá</h3>
+                <div class="price-filter">
+                    <input type="number" id="minPrice" placeholder="Giá tối thiểu" value="0">
+                    <input type="number" id="maxPrice" placeholder="Giá tối đa" value="5000000">
+                    <button class="apply-filter" onclick="filterProducts()">Áp dụng</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="products-section">
+            <!-- Admin Panel -->
+            <div class="admin-panel">
+                <h3>🛠️ Quản lý sản phẩm (Admin)</h3>
+                <div class="add-product-form">
+                    <input type="text" id="productName" placeholder="Tên vợt">
+                    <select id="productBrand">
+                        <option value="Yonex">Yonex</option>
+                        <option value="Li-Ning">Li-Ning</option>
+                        <option value="Victor">Victor</option>
+                        <option value="Lining">Lining</option>
+                        <option value="Mizuno">Mizuno</option>
+                    </select>
+                    <input type="text" id="productSpecs" placeholder="Thông số (3U, 4U,...)">
+                    <input type="number" id="productPrice" placeholder="Giá">
+                    <input type="number" id="productWeight" placeholder="Trọng lượng (g)">
+                    <input type="text" id="productBalance" placeholder="Điểm cân bằng">
+                    <input type="text" id="productShaft" placeholder="Độ cứng đũa">
+                    <button class="btn-add" onclick="addProduct()">+ Thêm sản phẩm</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <h2 style="color: #1a2b3c;">Vợt cầu lông chính hãng</h2>
+            <div class="products-grid" id="productsGrid"></div>
+
+            <!-- Player Info Section -->
+            <div class="player-info">
+                <h2>🏸 Vận động viên nổi bật</h2>
+                <div class="player-grid">
+                    <div class="player-card">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072013579?w=150&h=150&fit=crop" alt="VĐV">
+                        <h3>Nguyễn Tiến Minh</h3>
+                        <p>Huyền thoại cầu lông Việt Nam</p>
+                        <p>🔹 5 lần vô địch quốc gia</p>
+                        <p>🔹 Hạng 5 thế giới (2010)</p>
+                    </div>
+                    <div class="player-card">
+                        <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=150&h=150&fit=crop" alt="VĐV">
+                        <h3>Lâm Đức Phát</h3>
+                        <p>Tài năng trẻ triển vọng</p>
+                        <p>🔹 Vô địch giải trẻ châu Á</p>
+                        <p>🔹 Hạng 1 Việt Nam (2024)</p>
+                    </div>
+                </div>
+                <div class="badminton-history">
+                    <h3>📜 Lịch sử cầu lông thế giới</h3>
+                    <p>Cầu lông có nguồn gốc từ trò chơi "Poona" tại Ấn Độ vào thế kỷ 18. Năm 1873, trò chơi được giới thiệu tại Anh và trở thành môn thể thao phổ biến. Liên đoàn Cầu lông Thế giới (BWF) được thành lập năm 1934. Tại Việt Nam, phong trào cầu lông phát triển mạnh từ những năm 1990 với sự xuất hiện của các tay vợt xuất sắc như Nguyễn Tiến Minh, Vũ Thị Trang.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <h2>🛒 Giỏ hàng của bạn</h2>
+            <div id="cartItems"></div>
+            <div class="invoice" id="invoice">
+                <h3>Hóa đơn</h3>
+                <div id="invoiceItems"></div>
+                <div class="invoice-total" id="invoiceTotal"></div>
+            </div>
+            <button class="btn-buy" onclick="checkout()" style="margin-top: 1rem;">Thanh toán</button>
+            <button class="btn-buy" onclick="closeModal('cartModal')" style="background-color: #6c757d; margin-top: 0.5rem;">Đóng</button>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="modal" id="reviewModal">
+        <div class="modal-content">
+            <h2>Đánh giá sản phẩm</h2>
+            <div id="reviews"></div>
+            <h3>Thêm đánh giá</h3>
+            <input type="text" id="reviewerName" placeholder="Tên của bạn" style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem;">
+            <select id="reviewRating" style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem;">
+                <option value="5">⭐⭐⭐⭐⭐ (5 sao)</option>
+                <option value="4">⭐⭐⭐⭐ (4 sao)</option>
+                <option value="3">⭐⭐⭐ (3 sao)</option>
+                <option value="2">⭐⭐ (2 sao)</option>
+                <option value="1">⭐ (1 sao)</option>
+            </select>
+            <textarea id="reviewComment" placeholder="Nhận xét của bạn" rows="3" style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem;"></textarea>
+            <button class="btn-buy" onclick="addReview()">Gửi đánh giá</button>
+            <button class="btn-buy" onclick="closeModal('reviewModal')" style="background-color: #6c757d; margin-top: 0.5rem;">Đóng</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 BadmintonPro - Nâng tầm đẳng cấp cầu lông Việt</p>
+        <p>Hotline: 1900 1234 | Email: info@badmintonpro.vn</p>
+    </footer>
+
+    <script>
+        // Sample products data
+        let products = [
+            {
+                id: 1,
+                name: "Yonex Astrox 100 ZZ",
+                brand: "Yonex",
+                specs: "4U (83g), Điểm cân bằng 310mm",
+                price: 4890000,
+                weight: 83,
+                balance: "310mm",
+                shaft: "Cứng",
+                image: "🏸",
+                purchases: 156,
+                rating: 4.8,
+                reviews: [
+                    { name: "Nguyễn Văn A", rating: 5, comment: "Vợt rất nhẹ, đánh êm tay", date: "2024-01-15" },
+                    { name: "Trần Thị B", rating: 4, comment: "Phù hợp với người chơi lâu năm", date: "2024-01-10" }
+                ]
+            },
+            {
+                id: 2,
+                name: "Li-Ning Aeronaut 7000",
+                brand: "Li-Ning",
+                specs: "3U (88g), Điểm cân bằng 295mm",
+                price: 3250000,
+                weight: 88,
+                balance: "295mm",
+                shaft: "Trung bình",
+                image: "🏸",
+                purchases: 89,
+                rating: 4.5,
+                reviews: [
+                    { name: "Lê Văn C", rating: 5, comment: "Đẹp, chất lượng tốt", date: "2024-01-12" }
+                ]
+            },
+            {
+                id: 3,
+                name: "Victor Thruster K",
+                brand: "Victor",
+                specs: "4U (82g), Điểm cân bằng 305mm",
+                price: 2780000,
+                weight: 82,
+                balance: "305mm",
+                shaft: "Cứng",
+                image: "🏸",
+                purchases: 234,
+                rating: 4.7,
+                reviews: [
+                    { name: "Phạm Văn D", rating: 5, comment: "Lực đánh mạnh, kiểm soát tốt", date: "2024-01-08" },
+                    { name: "Hoàng Thị E", rating: 4, comment: "Hơi cứng tay cho người mới", date: "2024-01-05" }
+                ]
+            },
+            {
+                id: 4,
+                name: "Lining Turbo Charging",
+                brand: "Lining",
+                specs: "5U (78g), Điểm cân bằng 320mm",
+                price: 4120000,
+                weight: 78,
+                balance: "320mm",
+                shaft: "Mềm",
+                image: "🏸",
+                purchases: 67,
+                rating: 4.3,
+                reviews: []
+            }
+        ];
+
+        let cart = [];
+        let currentProductForReview = null;
+
+        // Load products
+        function loadProducts(filteredProducts = products) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+            
+            filteredProducts.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <div class="product-image">${product.image}</div>
+                    <div class="product-info">
+                        <div class="product-brand">${product.brand}</div>
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-specs">
+                            ${product.specs}<br>
+                            Trọng lượng: ${product.weight}g | CB: ${product.balance}<br>
+                            Đũa: ${product.shaft}
+                        </div>
+                        <div class="product-price">${product.price.toLocaleString()}đ</div>
+                        <div class="product-stats">
+                            <span class="rating">${'⭐'.repeat(Math.floor(product.rating))} (${product.rating})</span>
+                            <span>Đã bán: ${product.purchases}</span>
+                        </div>
+                        <button class="btn-buy" onclick="addToCart(${product.id})">Thêm vào giỏ</button>
+                        <button class="btn-buy" onclick="showReviews(${product.id})" style="background-color: #17a2b8; margin-top: 0.3rem;">Xem đánh giá</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filter products
+        function filterProducts() {
+            const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+            const maxPrice = parseInt(document.getElementById('maxPrice').value) || 5000000;
+            const brands = [];
+            document.querySelectorAll('#brandFilter input:checked').forEach(cb => {
+                brands.push(cb.value);
+            });
+
+            const filtered = products.filter(p => 
+                p.price >= minPrice && 
+                p.price <= maxPrice && 
+                brands.includes(p.brand)
+            );
+            loadProducts(filtered);
+        }
+
+        // Add product (admin)
+        function addProduct() {
+            const name = document.getElementById('productName').value;
+            const brand = document.getElementById('productBrand').value;
+            const specs = document.getElementById('productSpecs').value;
+            const price = parseInt(document.getElementById('productPrice').value);
+            const weight = parseInt(document.getElementById('productWeight').value);
+            const balance = document.getElementById('productBalance').value;
+            const shaft = document.getElementById('productShaft').value;
+
+            if (name && brand && specs && price && weight && balance && shaft) {
+                const newProduct = {
+                    id: products.length + 1,
+                    name: name,
+                    brand: brand,
+                    specs: `${weight}U (${weight}g), ${balance}`,
+                    price: price,
+                    weight: weight,
+                    balance: balance,
+                    shaft: shaft,
+                    image: "🏸",
+                    purchases: 0,
+                    rating: 0,
+                    reviews: []
+                };
+                products.push(newProduct);
+                loadProducts();
+                
+                // Clear form
+                document.getElementById('productName').value = '';
+                document.getElementById('productSpecs').value = '';
+                document.getElementById('productPrice').value = '';
+                document.getElementById('productWeight').value = '';
+                document.getElementById('productBalance').value = '';
+                document.getElementById('productShaft').value = '';
+                
+                alert('Đã thêm sản phẩm thành công!');
+            } else {
+                alert('Vui lòng điền đầy đủ thông tin!');
+            }
+        }
+
+        // Cart functions
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                cart.push(product);
+                document.getElementById('cartCount').textContent = cart.length;
+                alert('Đã thêm vào giỏ hàng!');
+            }
+        }
+
+        function showCart() {
+            const cartItems = document.getElementById('cartItems');
+            const invoiceItems = document.getElementById('invoiceItems');
+            const invoiceTotal = document.getElementById('invoiceTotal');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p>Giỏ hàng trống</p>';
+                invoiceItems.innerHTML = '';
+                invoiceTotal.textContent = '';
+            } else {
+                cartItems.innerHTML = '<h3>Sản phẩm trong giỏ:</h3>';
+                let total = 0;
+                let itemsHtml = '';
+                
+                cart.forEach((item, index) => {
+                    total += item.price;
+                    itemsHtml += `
+                        <div class="invoice-item">
+                            <span>${item.name}</span>
+                            <span>${item.price.toLocaleString()}đ</span>
+                        </div>
+                    `;
+                });
+                
+                cartItems.innerHTML += itemsHtml;
+                invoiceItems.innerHTML = itemsHtml;
+                invoiceTotal.textContent = `Tổng cộng: ${total.toLocaleString()}đ`;
+            }
+            
+            document.getElementById('cartModal').style.display = 'block';
+        }
+
+        function checkout() {
+            if (cart.length > 0) {
+                // Update purchases
+                cart.forEach(item => {
+                    const product = products.find(p => p.id === item.id);
+                    if (product) {
+                        product.purchases = (product.purchases || 0) + 1;
+                    }
+                });
+                
+                alert('Cảm ơn bạn đã mua hàng! Hóa đơn đã được lưu.');
+                cart = [];
+                document.getElementById('cartCount').textContent = '0';
+                closeModal('cartModal');
+                loadProducts();
+            } else {
+                alert('Giỏ hàng trống!');
+            }
+        }
+
+        // Review functions
+        function showReviews(productId) {
+            currentProductForReview = productId;
+            const product = products.find(p => p.id === productId);
+            const reviewsDiv = document.getElementById('reviews');
+            
+            if (product.reviews.length === 0) {
+                reviewsDiv.innerHTML = '<p>Chưa có đánh giá nào.</p>';
+            } else {
+                let reviewsHtml = '';
+                product.reviews.forEach(review => {
+                    reviewsHtml += `
+                        <div class="review-item">
+                            <div class="review-rating">${'⭐'.repeat(review.rating)} (${review.rating} sao)</div>
+                            <p><strong>${review.name}</strong> - <span class="review-date">${review.date}</span></p>
+                            <p>${review.comment}</p>
+                        </div>
+                    `;
+                });
+                reviewsDiv.innerHTML = reviewsHtml;
+            }
+            
+            document.getElementById('reviewModal').style.display = 'block';
+        }
+
+        function addReview() {
+            if (!currentProductForReview) return;
+            
+            const name = document.getElementById('reviewerName').value;
+            const rating = parseInt(document.getElementById('reviewRating').value);
+            const comment = document.getElementById('reviewComment').value;
+            
+            if (name && comment) {
+                const product = products.find(p => p.id === currentProductForReview);
+                const newReview = {
+                    name: name,
+                    rating: rating,
+                    comment: comment,
+                    date: new Date().toISOString().split('T')[0]
+                };
+                
+                product.reviews.push(newReview);
+                
+                // Update average rating
+                const totalRating = product.reviews.reduce((sum, r) => sum + r.rating, 0);
+                product.rating = totalRating / product.reviews.length;
+                
+                // Clear form
+                document.getElementById('reviewerName').value = '';
+                document.getElementById('reviewComment').value = '';
+                
+                alert('Cảm ơn bạn đã đánh giá!');
+                showReviews(currentProductForReview);
+                loadProducts();
+            } else {
+                alert('Vui lòng điền đầy đủ thông tin!');
+            }
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Initialize
+        loadProducts();
+
+        // Auto filter when checkbox changes
+        document.querySelectorAll('#brandFilter input').forEach(cb => {
+            cb.addEventListener('change', filterProducts);
+        });
+    </script>
+</body>
+</html>
